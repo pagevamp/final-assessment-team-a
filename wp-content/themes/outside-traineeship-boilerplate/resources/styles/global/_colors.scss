@@ -1,0 +1,26 @@
+// Background Color Classes
+
+@each $background-color, $properties in $colors {
+    
+    .bg-#{$background-color} {
+        background-color: $properties;
+    }
+}
+
+// Text Color Classes
+
+@each $text-color, $properties in $colors {
+    
+    .text-#{$text-color} {
+        color: $properties;
+    }
+}
+
+// Border Color Classes
+
+@each $border-color, $properties in $colors {
+    
+    .border-#{$text-color} {
+        border-color: $properties;
+    }
+}
