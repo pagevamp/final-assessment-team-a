@@ -30,8 +30,10 @@
 @import 'global/colors';
 @import 'global/functions';
 @import 'global/icons';
+@import 'global/typography';
 @import 'global/texture';
-@import './common/header-category';
+@import 'global/grids';
+//@import './common/header-category';
 
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';

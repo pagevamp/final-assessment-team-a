@@ -20,7 +20,7 @@
 
 @each $border-color, $properties in $colors {
     
-    .border-#{$text-color} {
+    .border-#{$border-color} {
         border-color: $properties;
     }
 }
