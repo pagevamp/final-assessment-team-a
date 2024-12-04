@@ -31,6 +31,9 @@
 	<span class="icon-chevron-down"></span>
 	<span class="icon-pause"></span>
 	<span class="icon-quote"></span>
+	<div class="bg-overlay-20" style="width: 500px; height: 500px">
+		<p class="d2">NiceNice</p>
+	</div>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
