@@ -10,9 +10,6 @@
     }
 
     @media screen and (min-width: map.get($breakpoints, "desktop")) {
-        $grid-columns: 12;
-        $grid-gutter-width: 2.5rem;
-        margin-inline: 5rem;
         @include grid-properties(12, 5rem, 2.5rem);
     }
 
