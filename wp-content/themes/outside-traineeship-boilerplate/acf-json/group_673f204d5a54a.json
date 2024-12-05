@@ -3,9 +3,9 @@
     "title": "Leadspace",
     "fields": [
         {
-            "key": "field_673f204d58438",
-            "label": "Leadspace",
-            "name": "leadspace",
+            "key": "field_67517e340eb47",
+            "label": "Leadspace Content",
+            "name": "leadspace_content",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -19,9 +19,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_673f206658439",
-                    "label": "Title",
-                    "name": "title",
+                    "key": "field_675173ec43fc4",
+                    "label": "Heading",
+                    "name": "heading",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -38,6 +38,32 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_6751740043fc5",
+                    "label": "Background Image",
+                    "name": "background_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
                 }
             ]
         }
@@ -60,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732190493
+    "modified": 1733397154
 }

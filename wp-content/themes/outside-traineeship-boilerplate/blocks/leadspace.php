@@ -1,13 +1,19 @@
 <?php
-if ( is_admin() ) :
-    /* Render screenshot for example */
-    $imgUrl = get_stylesheet_directory_uri() . '/public/images/preview/leadspace.webp';
-    echo '<img src="' . $imgUrl . '">';
-else:
-    $content = get_field('leadspace');
-    $title   = $content['title'] ?? false;
-    if(isset($title)):?>
-        <h1 class="leadspace"><?php echo $title;?></h1>
-<?php
-    endif;    
-endif; 
+    $leadspace_content = get_field('leadspace_content');   
+    $heading = $leadspace_content['heading'];
+    $image= $leadspace_content['background_image'];
+?>
+
+<section id="leadspace" class="leadspace">
+    <?php if(!empty($leadspace_content)): ?>
+
+        <!-- Background Image -->
+        <img class="leadspace__image" src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+        
+        <div class="leadspace__overlay bg-overlay-20"></div>
+
+        <!-- Heading -->
+        <h1 class="leadspace__heading d1"><?php echo $heading;?></h1> 
+
+    <?php endif?>
+</section>
