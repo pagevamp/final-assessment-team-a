@@ -1,3 +1,7 @@
 .leadspace{
-    color:yellow;
+    &__image{
+        img{
+            height: 400px;
+        }
+    }
 }
