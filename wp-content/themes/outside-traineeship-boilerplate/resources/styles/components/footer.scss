@@ -1,0 +1,110 @@
+.footer {
+
+    $self: ".footer";
+
+    padding-block: 2rem;
+
+    @media screen and (min-width: 720px) {
+        padding-inline: 5rem;
+    }
+
+    .grid-container {
+
+        #{$self} {
+
+            &__content {
+                grid-column: 1 / -1;
+                padding-bottom: 2.5rem;
+                border-bottom: 1px solid $neutral-100;
+
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+
+                @media screen and (min-width: 720px) {
+                    grid-column: 5 / 9;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                    padding-left: 2.5rem;
+                    border-left: 1px solid $neutral-100;
+                }
+
+                #{$self} {
+                    &__details {
+
+                        #{$self} {
+                            &__list {
+                                list-style: none;
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__nav {
+                grid-column: 1 / -1;
+                padding-bottom: 2.5rem;
+                border-bottom: 1px solid $neutral-100;
+
+                @media screen and (min-width: 720px) {
+                    grid-column: 9 / -1;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                    padding-left: 2.5rem;
+                    border-left: 1px solid $neutral-100;
+                }
+
+                #{$self} {
+
+                    &__menu {
+                        list-style: none;
+                        padding-left: 0;
+
+                        .menu-item {
+                            font-family: "Reckless Neue Book";
+                            font-size: 24px;
+                            line-height: 138%;
+                            font-weight: 400;
+                            letter-spacing: 0;
+
+                            @media screen and (min-width: 720px) {
+                                font-size: 26px;
+                                line-height: 145%;
+                                letter-spacing: 0;
+                            }
+
+                            @media screen and (min-width: 1024px) {
+                                font-size: 28px;
+                                line-height: 155%;
+                                letter-spacing: 0;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: $neutral-600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__logo-container {
+                grid-column: 1 / -1;
+
+                #{$self}__logo {
+                    width: 100%;
+                }
+
+                @media screen and (min-width: 720px) {
+                    grid-column: 1 / 5;
+                    grid-row-start: 1;
+
+                    #{$self}__logo {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
