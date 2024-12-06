@@ -11,9 +11,9 @@
                 <li class="sidebar__item"><a href="#colors" class="sidebar__link">Colors</a></li>
                 <li class="sidebar__item"><a href="#typography" class="sidebar__link">Typography</a></li>
                 <li class="sidebar__item"><a href="#icons" class="sidebar__link">Icons</a></li>
-                <li class="sidebar__item"><a href="#icons" class="sidebar__link">Buttons</a></li>
-                <li class="sidebar__item"><a href="#icons" class="sidebar__link">Texture</a></li>
-                <li class="sidebar__item"><a href="#icons" class="sidebar__link">Logo & Favicon</a></li>
+                <li class="sidebar__item"><a href="#button" class="sidebar__link">Buttons</a></li>
+                <li class="sidebar__item"><a href="#texture" class="sidebar__link">Texture</a></li>
+                <li class="sidebar__item"><a href="#favicon" class="sidebar__link">Logo & Favicon</a></li>
             </ul>
         </aside>
 
@@ -23,8 +23,9 @@
                 <h2 class="colors__header h2">Colors</h2>
 
                 <div class="colors__container">
+                    <h3>Primary</h3>
                     <div class="primary colors__row">
-                        <h3>Primary</h3>
+
                         <div class="colors__card bg-primary">
                             <div class="colors__card-body">
                                 <strong>Primary Red</strong>
@@ -59,8 +60,8 @@
                         </div>
                     </div>
 
+                    <h3>Secondary</h3>
                     <div class="secondary colors__row">
-                        <h3>Secondary</h3>
                         <div class="colors__card bg-secondary">
                             <div class="colors__card-body">
                                 <strong>Secondary</strong>
@@ -95,8 +96,8 @@
                         </div>
                     </div>
 
+                    <h3>Neutrals</h3>
                     <div class="neutrals colors__row">
-                        <h3>Neutrals</h3>
                         <div class="colors__card bg-neutral-600">
                             <div class="colors__card-body">
                                 <strong>Neutral 600</strong>
@@ -163,8 +164,8 @@
                         </div>
                     </div>
 
+                    <h3>Overlays</h3>
                     <div class="overlay colors__row">
-                        <h3>Overlays</h3>
                         <div class="colors__card bg-overlay-68">
                             <div class="colors__card-body">
                                 <strong>Overlay 68</strong>
@@ -337,7 +338,7 @@
                         <button class="btn-secondary" disabled></button>
                     </div>
                 </div>
-                <div class="buttons__container">
+                <div class="button__container">
                     <h3 class="h4">Tertiary</h3>
                     <div class="buttons">
                         <button class="btn-tertiary"></button>
@@ -351,6 +352,15 @@
 
                 <div class="texture__container bg-texture">
                     <code>.bg-texture</code>
+                </div>
+            </section>
+
+            <section id="favicon" class="favicon">
+                <h2 class="favicon__header h2">Logo & Favicon</h2>
+
+                <div class="favicon__container">
+                    <img src="./../../resources/images/logos/primary-logo.webp" alt="Primary logo">
+                    <img src="./../../resources/images/favicons/favicon.webp" alt="favicon">
                 </div>
             </section>
 

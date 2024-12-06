@@ -190,9 +190,18 @@
                             padding-inline: 8px;
                             padding-block: 4px;
                             border-radius: 5px;
+                            align-self: center;
                         }
+                    }
+                }
 
-                        ;
+                .favicon {
+                    padding-bottom: 3rem;
+                    border-bottom: 1px solid grey;
+
+                    &__container {
+                        display: flex;
+                        justify-content: space-around;
                     }
                 }
             }
