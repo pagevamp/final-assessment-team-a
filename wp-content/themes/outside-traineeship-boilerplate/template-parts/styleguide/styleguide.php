@@ -20,7 +20,7 @@
         <div class="styleguide__container">
             <!-- color section -->
             <section id="colors" class="colors">
-                <h2 class="colors__header">Colors</h2>
+                <h2 class="colors__header h2">Colors</h2>
 
                 <div class="colors__container">
                     <div class="primary colors__row">
@@ -33,7 +33,7 @@
                             </div>
                             <code>.bg-primary</code>
                         </div>
-                        <div class="colors__card ">
+                        <div class="colors__card bg-dark-red">
                             <div class="colors__card-body">
                                 <strong>Dark Red</strong>
                                 <i>$dark-red</i>
@@ -203,129 +203,164 @@
 
             <!-- typography section -->
             <section id="typography" class="typography">
-                    <h2 class="typography__header">Typography</h2>
+                <h2 class="typography__header">Typography</h2>
 
-                    <div class="typography__container">
-                        <div class="typography__section">
-                            <h3>Display</h3>
+                <div class="typography__container">
+                    <div class="typography__section">
+                        <h3>Display</h3>
 
-                            <div class="typography__item">
-                                <p class="d1">D1 - Display 1</p>
-                                <p>Desktop - 120px/100% Tablet - 60px/100% Mobile - 48px/110% Letter-spacing 0%</p>
-                            </div>
-                            <div class="typography__item">
-                                <p class="d2">D2 - Display 2</p>
-                                <p>Desktop - 88px/120% Tablet - 64px/100% Mobile - 40px/90% Letter-spacing 0%/-1%/-2%</p>
-                            </div>
+                        <div class="typography__item">
+                            <p class="d1">D1 - Display 1</p>
+                            <p>Desktop - 120px/100% Tablet - 60px/100% Mobile - 48px/110% Letter-spacing 0%</p>
                         </div>
-
-                        <div class="typography__section">
-                            <h3>Headings</h3>
-
-                            <div class="typography__item">
-                                <h1 class="h1">h1 - Heading 1</h1>
-                                <p>Desktop - 64px/110% Tablet - 52px/110% Mobile - 40px/110% Letter-spacing - 0%</p>
-                            </div>
-                            <div class="typography__item">
-                                <h2 class="h2">h2 - Heading 2</h2>
-                                <p>Desktop - 48px/110% Tablet - Mobile - 28px/30.8px</p>
-                            </div>
-                            <div class="typography__item">
-                                <h3 class="h3">h3 - Heading 3</h3>
-                                <p>Desktop - 32px/35.2px Mobile - 20px/22px</p>
-                            </div>
-                            <div class="typography__item">
-                                <h4 class="h4">h4 - Heading 4</h4>
-                                <p>Desktop - 24px/26.4px Mobile - 18px/19.8px</p>
-                            </div>
-                            <div class="typography__item">
-                                <h5 class="h5">h5 - Heading 5</h5>
-                                <p>Desktop - 16px/17.6px Mobile - 14px/15.4px</p>
-                            </div>
-                            <div class="typography__item">
-                                <h6 class="h6">h6 - Heading 6</h6>
-                                <p>Desktop - 14px/15.4px Mobile - 13px/14.3px</p>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="typography__section">
-                            <h3>Text</h3>
-
-                            <div class="typography__item">
-                                <p class="text-large">text-large - Text Size Large</p>
-                            </div>
-                            <div class="typography__item">
-                                <p class="text-medium">text-medium - Text Size Medium</p>
-                            </div>
-                            <div class="typography__item">
-                                <p class="text-regular">text-regular - Text Size Regular</p>
-                            </div>
-                            <div class="typography__item">
-                                <p class="text-small">text-small - Text Size Small</p>
-                            </div>
-                            <div class="typography__item">
-                                <p class="text-xsmall">text-xsmall - Text Size Xsmall</p>
-                            </div>
+                        <div class="typography__item">
+                            <p class="d2">D2 - Display 2</p>
+                            <p>Desktop - 88px/120% Tablet - 64px/100% Mobile - 40px/90% Letter-spacing 0%/-1%/-2%</p>
                         </div>
                     </div>
-                </section>
+
+                    <div class="typography__section">
+                        <h3>Headings</h3>
+
+                        <div class="typography__item">
+                            <h1 class="h1">h1 - Heading 1</h1>
+                            <p>Desktop - 64px/110% Tablet - 52px/110% Mobile - 40px/110% Letter-spacing - 0%</p>
+                        </div>
+                        <div class="typography__item">
+                            <h2 class="h2">h2 - Heading 2</h2>
+                            <p>Desktop - 48px/110% Tablet - Mobile - 28px/30.8px</p>
+                        </div>
+                        <div class="typography__item">
+                            <h3 class="h3">h3 - Heading 3</h3>
+                            <p>Desktop - 32px/35.2px Mobile - 20px/22px</p>
+                        </div>
+                        <div class="typography__item">
+                            <h4 class="h4">h4 - Heading 4</h4>
+                            <p>Desktop - 24px/26.4px Mobile - 18px/19.8px</p>
+                        </div>
+                        <div class="typography__item">
+                            <h5 class="h5">h5 - Heading 5</h5>
+                            <p>Desktop - 16px/17.6px Mobile - 14px/15.4px</p>
+                        </div>
+                        <div class="typography__item">
+                            <h6 class="h6">h6 - Heading 6</h6>
+                            <p>Desktop - 14px/15.4px Mobile - 13px/14.3px</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="typography__section">
+                        <h3>Text</h3>
+
+                        <div class="typography__item">
+                            <p class="text-large">text-large - Text Size Large</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-medium">text-medium - Text Size Medium</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-regular">text-regular - Text Size Regular</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-small">text-small - Text Size Small</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-xsmall">text-xsmall - Text Size Xsmall</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- icon section -->
             <section id="icons" class="icons">
-                    <h2 class="icons__header">Icons</h2>
+                <h2 class="icons__header h2">Icons</h2>
 
-                    <div class="icons__container">
-                        <div class="icons__item">
-                            <span class="icon-arrow-left"></span>
-                            <p>icon-arrow-left</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-arrow-right"></span>
-                            <p>icon-arrow-right</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-chevron-down"></span>
-                            <p>icon-chevron-down</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-menu"></span>
-                            <p>icon-menu</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-phone-call"></span>
-                            <p>icon-phone-call</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-play"></span>
-                            <p>icon-play</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-pause"></span>
-                            <p>icon-pause</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-quote"></span>
-                            <p>icon-quote</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-x-mark"></span>
-                            <p>icon-x-mark</p>
-                        </div>
-                        <div class="icons__item">
-                            <span class="icon-linkedin"></span>
-                            <p>icon-linkedin</p>
-                        </div>
+                <div class="icons__container">
+                    <div class="icons__item">
+                        <span class="icon-arrow-left"></span>
+                        <p>icon-arrow-left</p>
                     </div>
-                </section>
+                    <div class="icons__item">
+                        <span class="icon-arrow-right"></span>
+                        <p>icon-arrow-right</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-chevron-down"></span>
+                        <p>icon-chevron-down</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-menu"></span>
+                        <p>icon-menu</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-phone-call"></span>
+                        <p>icon-phone-call</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-play"></span>
+                        <p>icon-play</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-pause"></span>
+                        <p>icon-pause</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-quote"></span>
+                        <p>icon-quote</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-x-mark"></span>
+                        <p>icon-x-mark</p>
+                    </div>
+                    <div class="icons__item">
+                        <span class="icon-linkedin"></span>
+                        <p>icon-linkedin</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="button" class="button">
+                <h2 class="button__header h2">Buttons</h2>
+
+                <div class="button__container">
+                    <h3 class="h4">Primary</h3>
+                    <div class="buttons">
+                        <button class="btn-primary"></button>
+                        <button class="btn-primary" disabled></button>
+                    </div>
+                </div>
+                <div class="button__container">
+                    <h3 class="h4">Secondary</h3>
+                    <div class="buttons">
+                        <button class="btn-secondary"></button>
+                        <button class="btn-secondary" disabled></button>
+                    </div>
+                </div>
+                <div class="buttons__container">
+                    <h3 class="h4">Tertiary</h3>
+                    <div class="buttons">
+                        <button class="btn-tertiary"></button>
+                        <button class="btn-tertiary" disabled></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="texture" class="texture">
+                <h2 class="texture__header h2">Texture Pattern</h2>
+
+                <div class="texture__container bg-texture">
+                    <code>.bg-texture</code>
+                </div>
+            </section>
+
         </div>
     </main>
 
-    <footer>
+    <!-- <footer>
         <div class="foot">
             <p class="mb-0">© 2024. All Rights Reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
 </section>
