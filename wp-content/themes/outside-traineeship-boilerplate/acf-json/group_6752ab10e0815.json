@@ -121,7 +121,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/departments"
             }
         ]
     ],
@@ -134,5 +134,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733472537
+    "modified": 1733474193
 }
