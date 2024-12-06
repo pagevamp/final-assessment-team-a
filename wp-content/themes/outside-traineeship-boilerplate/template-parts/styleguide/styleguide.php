@@ -274,55 +274,51 @@
 
             <!-- icon section -->
             <section id="icons" class="icons">
-                <div class="icons__container">
-                    <div class="icons__header">
-                        <h2 class="icons__title">Icons</h2>
-                    </div>
-                    <div class="icons__lists">
-                        <div class="icons__list--i1">
-                            <span class="icon icon-arrow-left"></span>
-                            <code>&lt;span class="icon-arrow-left"&gt;&lt;/span&gt;</code>
-                            <!-- &lt means less than and &gt means greater than -->
+                    <h2 class="icons__header">Icons</h2>
+
+                    <div class="icons__container">
+                        <div class="icons__item">
+                            <span class="icon-arrow-left"></span>
+                            <p>icon-arrow-left</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-arrow-right"></span>
-                            <code>&lt;span class="icon-arrow-right"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-arrow-right"></span>
+                            <p>icon-arrow-right</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-chevron-down"></span>
-                            <code>&lt;span class="icon-chevron-down"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-chevron-down"></span>
+                            <p>icon-chevron-down</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-menu"></span>
-                            <code>&lt;span class="icon-menu"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-menu"></span>
+                            <p>icon-menu</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-pause"></span>
-                            <code>&lt;span class="icon-pause"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-phone-call"></span>
+                            <p>icon-phone-call</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-phone-call"></span>
-                            <code>&lt;span class="icon-phone-call"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-play"></span>
+                            <p>icon-play</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-play"></span>
-                            <code>&lt;span class="icon-play"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-pause"></span>
+                            <p>icon-pause</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-quote"></span>
-                            <code>&lt;span class="icon-quote"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-quote"></span>
+                            <p>icon-quote</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-x-mark"></span>
-                            <code>&lt;span class="icon-x-mark"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-x-mark"></span>
+                            <p>icon-x-mark</p>
                         </div>
-                        <div class="icons__list--i1">
-                            <span class="icon icon-linkedin"></span>
-                            <code>&lt;span class="icon-linkedin"&gt;&lt;/span&gt;</code>
+                        <div class="icons__item">
+                            <span class="icon-linkedin"></span>
+                            <p>icon-linkedin</p>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
         </div>
     </main>
 
