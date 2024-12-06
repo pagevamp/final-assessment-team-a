@@ -15,12 +15,12 @@ $displays: (
         "responsive": (
             "tablet": (
                 "font-size": 60px,
-                "line-height": 120%,
+                "line-height": 100%,
                 "letter-spacing": 0
             ),
             "desktop": (
                 "font-size": 120px,
-                "line-height": 120%,
+                "line-height": 100%,
                 "letter-spacing": 0
             )
         )
@@ -48,13 +48,13 @@ $displays: (
 $headings: (
     "h1": (
         "font-size": 40px,
-        "line-height": 120%, 
+        "line-height": 110%, 
         "font-weight": 700,
         "letter-spacing": 0,
         "responsive": (
             "tablet": (
                 "font-size": 48px,
-                "line-height": 120%,
+                "line-height": 110%,
                 "letter-spacing": 0,
             ),
             "desktop": (
@@ -159,13 +159,13 @@ $headings: (
 $subheadings: (
     "sh0": (
         "font-size": 24px,
-        "line-height": 138%,
+        "line-height": 155%,
         "font-weight": 400,
         "letter-spacing": 0,
         "responsive": (
             "tablet": (
                 "font-size": 26px,
-                "line-height": 145%,
+                "line-height": 155%,
                 "letter-spacing": 0
             ),
             "desktop": (
@@ -183,7 +183,7 @@ $subheadings: (
         "responsive": (
             "tablet": (
                 "font-size": 26px,
-                "line-height": 140%,
+                "line-height": 139%,
                 "letter-spacing": 0
             ),
             "desktop": (
@@ -201,7 +201,7 @@ $subheadings: (
         "responsive": (
             "tablet": (
                 "font-size": 24px,
-                "line-height": 140%,
+                "line-height": 139%,
                 "letter-spacing": 0
             ),
             "desktop": (
@@ -219,12 +219,12 @@ $subheadings: (
         "responsive": (
             "tablet": (
                 "font-size": 18px,
-                "line-height": 140%,
+                "line-height": 160%,
                 "letter-spacing": 0
             ),
             "desktop": (
                 "font-size": 18px,
-                "line-height": 110%,
+                "line-height": 160%,
                 "letter-spacing": 0
             )
         )
@@ -240,48 +240,48 @@ $text-sizes: (
         "responsive": (
             "tablet": (
                 "font-size": 26px,
-                "line-height": 135%,
+                "line-height": 122%,
                 "letter-spacing": 0
             ),
             "desktop": (
                 "font-size": 28px,
-                "line-height": 150%,
+                "line-height": 125%,
                 "letter-spacing": 0
             )
         )
     ),
     "text-lg": (
         "font-size": 18px,
-        "line-height": 140%,
+        "line-height": 150%,
         "font-weight": 400,
         "letter-spacing": 0,
         "responsive": (
             "tablet": (
                 "font-size": 18px,
-                "line-height": 140%,
+                "line-height": 150%,
                 "letter-spacing": 0.01rem
             ),
             "desktop": (
                 "font-size": 18px,
-                "line-height": 140%,
+                "line-height": 150%,
                 "letter-spacing": 0.02rem
             )
         )
     ),
     "text-md": (
         "font-size": 16px,
-        "line-height": 140%,
+        "line-height": 150%,
         "font-weight": 400,
         "letter-spacing": 0,
         "responsive": (
             "tablet": (
                 "font-size": 16px,
-                "line-height": 140%,
+                "line-height": 150%,
                 "letter-spacing": 0
             ),
             "desktop": (
                 "font-size": 16px,
-                "line-height": 140%,
+                "line-height": 150%,
                 "letter-spacing": 0
             )
         )

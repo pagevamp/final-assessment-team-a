@@ -35,6 +35,11 @@
 @import 'global/grids';
 //@import './common/header-category';
 
+// Components Scss
+@import './components/footer.scss';
+// Component Scss
+@import 'styles/leadspace.scss';
+
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';
 @import './../../node_modules/bootstrap/scss/grid';
