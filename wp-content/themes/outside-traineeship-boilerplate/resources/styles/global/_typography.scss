@@ -1,0 +1,54 @@
+@each $display, $properties in $displays {
+    .#{$display} {
+        font-family: 'Reckless Neue Bold';
+        @include responsive-styles($properties);
+    }
+}
+
+@each $heading, $properties in $headings {
+    .#{$heading} {
+        font-family: 'Reckless Neue Bold';
+        @include responsive-styles($properties);
+
+        @if $heading == 'h5' {
+            font-family: 'Reckless Neue Medium';
+        }
+        @if $heading == 'h6' {
+            font-family: 'Reckless Neue Book';
+        }
+    }
+}
+
+@each $subheading, $properties in $subheadings {
+    .#{$subheading} {
+        font-family: 'Reckless Neue Book';
+        @include responsive-styles($properties);
+    }
+}
+
+@each $text-size, $properties in $text-sizes {
+    .#{$text-size} {
+        font-family: 'General Sans';
+        @include responsive-styles($properties);
+    }
+}
+
+@each $caption, $properties in $captions {
+    .#{$caption} {
+        font-family: 'General Sans';
+        text-transform: uppercase;
+        @include responsive-styles($properties);
+    }
+}
+
+@each $button-link, $properties in $button-links {
+    .#{$button-link} {
+        @if $button-link == 'lg' {
+            font-family: 'General Sans Medium';
+        }
+        @else{
+            font-family: 'General Sans';
+        }   
+        @include responsive-styles($properties);
+    }
+}

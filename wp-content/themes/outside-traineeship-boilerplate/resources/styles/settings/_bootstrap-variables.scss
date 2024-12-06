@@ -54,6 +54,34 @@ $cyan: #0dcaf0 !default;
 $cream: #fdf2ed !default;
 $peach: #fee0cf !default;
 $gray: $gray-800 !default;
+
+// Primary colors
+$primary-red: #D72027 !default;
+$dark-red: #A1181D !default;
+$light-red: #F3BABC !default;
+$ultra-light-red: #FBE9E9 !default;
+
+//Secondary colors
+$secondary: #101922 !default;
+$dark: #0C131A !default;
+$light: #DBDDDE !default;
+$ultra-light: #E7E8E9 !default;
+
+// Neutrals
+$neutral-600: #111111 !default;
+$neutral-500: #1C1C1C !default;
+$neutral-400: #292929 !default;
+$neutral-300: #393939 !default;
+$neutral-200: #7C7C7C !default;
+$neutral-100: #DEDEDE !default;
+$neutral-75: #E9E9E9 !default;
+$neutral-50: #FFFFFF !default;
+
+// Overlays
+$overlay-68: #000000AD !default;
+$overlay-50: #00000080 !default;
+$overlay-30: #0000004D !default;
+$overlay-20: #00000033 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -78,6 +106,27 @@ $colors: (
   'light-gray': $gray-300,
   'mid-gray': $gray-600,
   'gray': $gray-800,
+
+  "primary-red": $primary-red,
+  "dark-red": $dark-red,
+  "light-red": $light-red,
+  "ultra-light-red": $ultra-light-red,
+  "secondary": $secondary,
+  "dark": $dark,
+  "light": $light,
+  "ultra-light": $ultra-light,
+  "neutral-600": $neutral-600,
+  "neutral-500": $neutral-500,
+  "neutral-400": $neutral-400,
+  "neutral-300": $neutral-300,
+  "neutral-200": $neutral-200,
+  "neutral-100": $neutral-100,
+  "neutral-75": $neutral-75,
+  "neutral-50": $neutral-50,
+  "overlay-68": $overlay-68,
+  "overlay-50": $overlay-50,
+  "overlay-30": $overlay-30,
+  "overlay-20": $overlay-20,
 ) !default;
 // scss-docs-end colors-map
 
@@ -312,14 +361,11 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $green !default;
-$secondary: $turqoise !default;
+$primary: $primary-red !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-900 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map

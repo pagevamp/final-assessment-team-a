@@ -1,15 +1,23 @@
 
+// Common imports
+@import './common-imports';
+
 // Bootstrap Functions
 @import './../../node_modules/bootstrap/scss/functions';
 
-
+// Settings Variables
 @import "settings/_bootstrap-variables";
+@import "settings/custom-variables";
+@import "settings/variables-dark";
 
 @import './../../node_modules/bootstrap/scss/variables';
 @import './../../node_modules/bootstrap/scss/mixins';
 
 // Include bootstrap remainder of variables
 @import './../../node_modules/bootstrap/scss/maps';
+
+// Tools and mixins
+@import './tools/mixins';
 
 // GENERIC
 @import './../../node_modules/bootstrap/scss/root';
@@ -18,6 +26,17 @@
 
 // Normalize Scss
 @import 'global/fonts';
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/functions';
+@import 'global/icons';
+@import 'global/typography';
+@import 'global/texture';
+@import 'global/grids';
+//@import './common/header-category';
+
+// Components Scss
+@import './components/footer.scss';
 
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';

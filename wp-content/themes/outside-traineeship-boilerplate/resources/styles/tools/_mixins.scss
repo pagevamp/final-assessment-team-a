@@ -1,0 +1,67 @@
+@use "sass:map";
+
+// Responsive mixin for buttons
+@mixin responsive-buttons {
+    
+    height: 1.25rem;
+    gap: 2.5rem;
+    padding: 1rem 1.5rem;
+
+    @media screen and (min-width: map.get($breakpoints, "mobile")) {
+        height: 1.375rem;
+        gap: 4rem;
+        padding: 1.25rem 1.625rem;
+    }
+
+    @media screen and (min-width: map.get($breakpoints, "tablet")) {
+        height: 1.5rem;
+        gap: 5.5rem;
+        padding: 1.375rem 1.75rem;
+    }
+}
+
+//Repsonsive mixin for tertiary buttons
+@mixin responsive-tertiary-buttons {
+    
+    height: 1.25rem;
+    gap: 0.75rem;
+    padding-block: 0.5rem;
+
+    @media screen and (min-width: map.get($breakpoints, "mobile")) {
+        height: 1.375rem;
+    }
+
+    @media screen and (min-width: map.get($breakpoints, "tablet")) {
+        height: 1.5rem;
+    }
+}
+
+// Mixin for responsive typography
+@mixin responsive-styles($properties) {
+    
+    font-size: map.get($properties, "font-size");
+    line-height: map.get($properties, "line-height");
+    font-weight: map.get($properties, "font-weight");
+    letter-spacing: map.get($properties, "letter-spacing");
+
+    @media screen and (min-width: map.get($breakpoints, "tablet")) {
+        $tablet-responsive: map.get(map.get($properties, "responsive"), "tablet");
+        font-size: map.get($tablet-responsive, "font-size");
+        line-height: map.get($tablet-responsive, "line-height");
+        letter-spacing: map.get($tablet-responsive, "letter-spacing");
+    }
+
+    @media screen and (min-width: map.get($breakpoints, "desktop")) {
+        $desktop-responsive: map.get(map.get($properties, "responsive"), "desktop");
+        font-size: map.get($desktop-responsive, "font-size");
+        line-height: map.get($desktop-responsive, "line-height");
+        letter-spacing: map.get($desktop-responsive, "letter-spacing");
+    }
+}
+
+// Mixin for grid container
+@mixin grid-properties($grid-columns, $margin, $gutter) {
+    grid-template-columns: repeat($grid-columns, 1fr);
+    margin-inline: $margin;
+    grid-gap: $gutter;
+} 
