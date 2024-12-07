@@ -1,0 +1,99 @@
+.partners {
+    margin-block: clamp(3rem, 5vw, 5rem);
+
+    $self: ".partners";
+
+    .container- {
+
+        &mobile {
+            @media screen and (min-width: 425px) {
+                display: none;
+            }
+
+            @media screen and (min-width: 1000px) {
+                display: none;
+            }
+        }
+
+        &tablet {
+            display: none;
+
+            @media screen and (min-width: 425px) {
+                display: block;
+            }
+
+            @media screen and (min-width: 1000px) {
+                display: none;
+            }
+        }
+
+        &desktop {
+            display: none;
+
+            @media screen and (min-width: 425px) {
+                display: none;
+            }
+
+            @media screen and (min-width: 1000px) {
+                display: block;
+            }
+        }
+    }
+
+    &__container {
+        display: grid;
+
+        $logo-count: 2;
+        grid-template-columns: clamp(1.75rem, 1.75rem + 0.369vw, 5rem) repeat($logo-count, 1fr) clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+
+        @media screen and (min-width: 425px) {
+            $logo-count: 3;
+            grid-template-columns: clamp(1.75rem, 1.75rem + 0.369vw, 5rem) repeat($logo-count, 1fr) clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+        }
+
+        @media screen and (min-width: 1000px) {
+            $logo-count: 4;
+            grid-template-columns: clamp(1.75rem, 1.75rem + 0.369vw, 5rem) repeat($logo-count, 1fr) clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+        }
+
+        .grid-end {
+            border-top: 1px solid $neutral-100;
+            border-bottom: 1px solid $neutral-100;
+        }
+
+        .grid-block {
+            border-inline: 1px solid $neutral-100;
+            height: clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+        }
+
+        #{$self} {
+
+            &__image-container {
+                display: grid;
+                place-items: center;
+                border: 1px solid $neutral-100;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    .btn-tertiary {
+        &::after {
+            display: none;
+        }
+    }
+
+    .sr-only {
+        visibility: hidden;
+    }
+
+    .grid-row-control {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
