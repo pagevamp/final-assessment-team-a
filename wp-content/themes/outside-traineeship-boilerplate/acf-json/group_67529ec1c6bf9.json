@@ -135,9 +135,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/featured-projects"
+                "value": "project"
             }
         ]
     ],
@@ -150,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733469482
+    "modified": 1733577208
 }
