@@ -23,7 +23,7 @@
                 }
 
                 #{$this}__content {
-                    border-left: 1px solid;
+                    border-left: 1px solid $neutral-100;
                     padding-left: 30px;
                     display: flex;
                     flex-direction: column;
