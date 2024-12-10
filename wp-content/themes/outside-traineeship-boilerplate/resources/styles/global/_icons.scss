@@ -1,6 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../../fonts/figma-icons/icomoon.woff') format('woff');
+  src:  url('#{$font-path}/figma-icons/icomoon.eot?kxuk4y');
+  src:  url('#{$font-path}/figma-icons/icomoon.eot?kxuk4y#iefix') format('embedded-opentype'),
+    url('#{$font-path}/figma-icons/icomoon.ttf?kxuk4y') format('truetype'),
+    url('#{$font-path}/figma-icons/icomoon.woff?kxuk4y') format('woff'),
+    url('#{$font-path}/figma-icons/icomoon.svg?kxuk4y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

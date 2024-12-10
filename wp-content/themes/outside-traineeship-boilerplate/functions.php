@@ -142,6 +142,9 @@ add_action( 'widgets_init', 'outside_traineeship_biolerplate_widgets_init' );
 function outside_traineeship_biolerplate_scripts() {
 	wp_enqueue_style('app.css', get_template_directory_uri().'/public/styles/app.css', false, null);
     wp_enqueue_script('app.js', get_template_directory_uri().'/public/scripts/app.js', ['jquery'], null, true);
+	// swiper
+	wp_enqueue_style( 'swiper-cdn-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION );
+	wp_enqueue_script( 'swiper-cdn-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), _S_VERSION, true );
 }
 add_action('wp_enqueue_scripts', 'outside_traineeship_biolerplate_scripts');
 
