@@ -2,7 +2,8 @@
 add_action('acf/init', function() {
     if( function_exists('acf_register_block_type') ) {
         $biolerplateModules = [
-            'leadspace'  => 'Leadspace',
+            'leadspace'         => 'Leadspace',
+            'featured_projects' => 'Featured Projects',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
