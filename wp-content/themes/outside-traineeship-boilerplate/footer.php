@@ -19,7 +19,7 @@
 	$footer_content = $footer['footer_content'];
 	?>
 
-	<section class="grid-container">
+	<section class="footer__container">
 		<div class="footer__content">
 			<?php foreach ($footer_content as $content): ?>
 				<div class="footer__details">
@@ -27,7 +27,11 @@
 
 					<ul class="footer__list">
 						<?php foreach ($content['list'] as $item): ?>
-							<li class="text-neutral-600"><?php echo $item['item']; ?></li>
+							<li class="text-neutral-600 sh3">
+								<a href="<?php echo $item['link'] ?>" class="text-neutral-600 text-decoration-none">
+									<?php echo $item['item']; ?>
+								</a>
+							</li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
