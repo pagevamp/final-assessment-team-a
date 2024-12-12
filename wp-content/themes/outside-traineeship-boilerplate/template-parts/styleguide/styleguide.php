@@ -147,7 +147,7 @@
                             <code>.bg-neutral-100</code>
                         </div>
                         <div class="colors__card bg-neutral-75">
-                            <div class="colors__card-body">
+                            <div class="colors__card-body text-secondary">
                                 <strong>Neutral 75</strong>
                                 <i>$neutral-75</i>
                                 <span>#E9E9E9</span>
@@ -155,7 +155,7 @@
                             <code>.bg-neutral-75</code>
                         </div>
                         <div class="colors__card bg-neutral-50">
-                            <div class="colors__card-body">
+                            <div class="colors__card-body text-secondary">
                                 <strong>Neutral 50</strong>
                                 <i>$neutral-50</i>
                                 <span>#FFFFFF</span>
@@ -229,45 +229,111 @@
                         </div>
                         <div class="typography__item">
                             <h2 class="h2">h2 - Heading 2</h2>
-                            <p>Desktop - 48px/110% Tablet - Mobile - 28px/30.8px</p>
+                            <p>Desktop - 48px/110% Tablet - Mobile - 32px/140% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
                             <h3 class="h3">h3 - Heading 3</h3>
-                            <p>Desktop - 32px/35.2px Mobile - 20px/22px</p>
+                            <p>Desktop - 40px/120% Mobile - 28px/140% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
                             <h4 class="h4">h4 - Heading 4</h4>
-                            <p>Desktop - 24px/26.4px Mobile - 18px/19.8px</p>
+                            <p>Desktop - 32px/140% Mobile - 28px/140% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
                             <h5 class="h5">h5 - Heading 5</h5>
-                            <p>Desktop - 16px/17.6px Mobile - 14px/15.4px</p>
+                            <p>Desktop - 28px/160% Mobile - 18px/150% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
                             <h6 class="h6">h6 - Heading 6</h6>
-                            <p>Desktop - 14px/15.4px Mobile - 13px/14.3px</p>
+                            <p>Desktop - 22px/138% Mobile - 20px/140% Letter-spacing - 0%</p>
                         </div>
                     </div>
 
                     <hr>
 
                     <div class="typography__section">
-                        <h3>Text</h3>
+                        <h3>Sub Heading</h3>
 
                         <div class="typography__item">
-                            <p class="text-large">text-large - Text Size Large</p>
+                            <p class="sh0">sh0 - Sub Heading 0</p>
+                            <p>Desktop - 28px/155% Mobile - 24px/155% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
-                            <p class="text-medium">text-medium - Text Size Medium</p>
+                            <p class="sh1">sh1 - Sub Heading 1</p>
+                            <p>Desktop - 28px/140% Mobile - 24px/138% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
-                            <p class="text-regular">text-regular - Text Size Regular</p>
+                            <p class="sh2">sh2 - Sub Heading 2</p>
+                            <p>Desktop - 20px/140% Mobile - 24px/138% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
-                            <p class="text-small">text-small - Text Size Small</p>
+                            <p class="sh3">sh3 - Sub Heading 3</p>
+                            <p>Desktop - 18px/160% Mobile - 18px/160% Letter-spacing - 0%</p>
+                        </div>
+                    </div>  
+
+                    <hr>
+
+                    <div class="typography__section">
+                        <h3>Body</h3>
+
+                        <div class="typography__item">
+                            <p class="text-xl">text-xl - Body XL</p>
+                            <p>Desktop - 28px/125% Mobile - 24px/120% Letter-spacing - 0%</p>
                         </div>
                         <div class="typography__item">
-                            <p class="text-xsmall">text-xsmall - Text Size Xsmall</p>
+                            <p class="text-lg">text-lg - Body Lg</p>
+                            <p>Desktop - 18px/125% Mobile - 18px/150% Letter-spacing - 0.02rem</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-md">text-md - Body Md</p>
+                            <p>Desktop - 16px/150% Mobile - 16px/150% Letter-spacing - 0%</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-sm-all">text-sm-all - Body Sm All</p>
+                            <p>Desktop -14px/150% Mobile - 14px/140% Letter-spacing - 0%</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-sm">text-sm - Body Sm</p>
+                            <p>Desktop - 14px/150% Mobile - 12px/150% Letter-spacing - 0%</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="text-xsm">text-xsm - Body XSm</p>
+                            <p>Desktop - 12px/140% Mobile - 12px/140% Letter-spacing - 0%</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="typography__section">
+                        <h3>Captions</h3>
+
+                        <div class="typography__item">
+                            <p class="c1">c1 - Caption 1</p>
+                            <p>Desktop - 14px/150% Mobile - 12px/150% Letter-spacing - 0.1rem</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="c2">c2 - Caption 2</p>
+                            <p>Desktop - 14px/150% Mobile - 14px/150% Letter-spacing - 0.1rem</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="c3">c3 - Caption 3</p>
+                            <p>Desktop - 12px/150% Mobile - 12px/150% Letter-spacing - 0.1rem</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="typography__section">
+                        <h3>Button/Links</h3>
+
+                        <div class="typography__item">
+                            <p class="lg">lg - Button Lg</p>
+                            <p>Desktop - 16px/150% Mobile - 16px/150% Letter-spacing - 0%</p>
+                        </div>
+                        <div class="typography__item">
+                            <p class="c2">nav - Button Nav</p>
+                            <p>Desktop - 16px/150% Mobile - 16px/150% Letter-spacing - 0%</p>
                         </div>
                     </div>
                 </div>
@@ -322,7 +388,7 @@
             </section>
 
             <section id="button" class="button">
-                <h2 class="button__header h2">Buttons</h2>
+                <h2 class="button__header h2 mb-xl">Buttons</h2>
 
                 <div class="button__container">
                     <h3 class="h4">Primary</h3>
@@ -359,8 +425,8 @@
                 <h2 class="favicon__header h2">Logo & Favicon</h2>
 
                 <div class="favicon__container">
-                    <img src="./../../resources/images/logos/primary-logo.webp" alt="Primary logo">
-                    <img src="./../../resources/images/favicons/favicon.webp" alt="favicon">
+                    <img src="/wp-content/themes/outside-traineeship-boilerplate/public/images/logos/primary-logo.webp" class="heffron" alt="Primary logo">
+                    <img src="/wp-content/themes/outside-traineeship-boilerplate/public/images/favicons/favicon.webp"class="h" alt="favicon">
                 </div>
             </section>
 

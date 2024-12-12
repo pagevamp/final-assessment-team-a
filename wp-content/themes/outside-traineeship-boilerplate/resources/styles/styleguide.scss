@@ -1,5 +1,5 @@
 .styleguide {
-    padding-inline: 3rem;
+    padding-inline: 1rem;
     padding-block: 2rem;
 
     $self: ".styleguide";
@@ -29,7 +29,7 @@
             padding-right: 0.5rem;
 
 
-            @media screen and (min-width: 428px) {
+            @media screen and (min-width: 500px) {
                 max-height: 90vh;
                 flex-basis: 300px;
                 position: -webkit-sticky;
@@ -62,8 +62,6 @@
 
                 .colors {
                     $self: ".colors";
-
-                    padding-bottom: 3rem;
                     border-bottom: 1px solid grey;
 
                     &__header {
@@ -75,10 +73,18 @@
                     &__container {
 
                         #{$self}__row {
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 1rem;
-                            flex-wrap: wrap;
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 2rem;
+                            margin-bottom: 3rem;
+
+                            @include media-breakpoint-up(sm){
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+                            @include media-breakpoint-up(md){
+                                grid-template-columns: repeat(4, 1fr);
+                            }
+
                         }
 
                         #{$self}__card {
@@ -87,6 +93,7 @@
                             padding-inline: 0.8rem;
                             padding-block: 1rem;
                             color: #fff;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
                             &-body {
                                 margin-bottom: 1.5rem;
@@ -168,10 +175,11 @@
                     border-bottom: 1px solid grey;
 
                     &__container {
-
+                        
                         .buttons {
                             display: flex;
                             justify-content: space-around;
+                            margin-block: 1rem;
                         }
                     }
                 }
@@ -181,8 +189,8 @@
                     border-bottom: 1px solid grey;
 
                     &__container {
-                        width: 500px;
-                        height: 500px;
+                        width: 50%;
+                        aspect-ratio: 1/1;
 
                         code {
                             background-color: rgba(0, 0, 0, .75);
@@ -198,10 +206,23 @@
                 .favicon {
                     padding-bottom: 3rem;
                     border-bottom: 1px solid grey;
-
+                    width: 100%;
                     &__container {
                         display: flex;
+                        align-items: center;
                         justify-content: space-around;
+                        flex-wrap: wrap;
+                        gap: 2rem;
+                        img{
+                            width: 180px;
+                            &:nth-of-type(1){
+                                aspect-ratio: 16/9;
+                            }
+                            
+                            &:nth-of-type(2){
+                                aspect-ratio: 1/1;
+                            }
+                        }
                     }
                 }
             }
