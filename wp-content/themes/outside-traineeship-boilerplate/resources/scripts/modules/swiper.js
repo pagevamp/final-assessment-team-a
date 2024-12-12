@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!swiperInstances[swiperId]) {
           swiperInstances[swiperId] = new Swiper(`#${swiperId}`, {
             slidesPerView: "auto",
-            spaceBetween: 30,
             navigation: {
               nextEl: ".btn-swiper-next",
               prevEl: ".btn-swiper-prev",
