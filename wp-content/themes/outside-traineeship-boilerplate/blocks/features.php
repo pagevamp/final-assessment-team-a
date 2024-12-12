@@ -18,14 +18,17 @@
             $sectionClass = $alternate ? "features bg-texture" : "features";
             $containerClass = $alternate ? "features__maincontainer left" : "features__maincontainer right";
             $buttonClass = $page === 'home' ? "btn-secondary" : ($page === 'about' ? "btn-tertiary" : "");
+            $aboutClass = $page == 'about' ? "img-padding" : "";
 ?>
 
-    <section id="features" class="<?php echo $sectionClass; ?>">
-        <div class="<?php echo $containerClass; ?>">
+<section id="features" class="<?php echo $sectionClass; ?> ">
+        <div class="<?php echo $containerClass; echo $alternate? "  ms-2xl": " me-2xl"; ?>">
 
+            <div class="features__imagecontainer">
             <?php if (!empty($image)): ?>
-                <img src="<?php echo $image['url']; ?>" class="features__image" alt="<?php echo $image['alt']; ?>">
+                <img src="<?php echo $image['url']; ?>" class="features__image <?php echo $aboutClass; ?>" alt="<?php echo $image['alt']; ?>">
             <?php endif; ?>
+            </div>
 
             <div class="features__content text-center">
 
