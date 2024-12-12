@@ -1,0 +1,62 @@
+@import '../custom.scss';
+
+.history {
+
+    $self: ".history";
+
+    padding-inline: 3rem 0;
+
+    .h2 {
+        margin-bottom: 6rem;
+    }
+
+    .historyswiper {
+        width: 100%;
+
+        .swiper-wrapper {
+            display: flex;
+            gap: 2.5rem;
+
+            .swiper-slide {
+
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                padding-bottom: 2rem;
+                // border-bottom: 1px solid $neutral-100;
+
+                .image-container {
+                    width: 100%;
+                    flex-grow: 1;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        object-fit: cover;
+                    }
+                }
+
+                #{$self}__content{
+                    width: 100%; 
+                    display: -webkit-box; 
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical; /* Required for line clamping */
+                    overflow: hidden;
+                    text-overflow: ellipsis; /* Adds the ellipsis */
+                }
+            }
+        }
+        .swiper-navigation {
+            margin-top: 4rem;
+            margin-left: 5rem;
+
+            display: flex;
+            gap: 1rem;
+
+            .btn-swiper-prev {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
