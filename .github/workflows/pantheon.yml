@@ -2,10 +2,10 @@ name: Setup Terminus
 on:
   push:
     branches:
-      - main
+      - stage
   pull_request:
     branches:
-      - main
+      - stage
 # env:
 #   pantheon_env: 'dev'
 #   pantheon_repo: ${{ secrets.PANTHEON_REPO }}
@@ -14,7 +14,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@stage
       - name: Installing PHP
         uses: shivammathur/setup-php@master
         with:
