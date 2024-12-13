@@ -1,0 +1,20 @@
+api_version: 1
+php_version: 8.0
+# See https://pantheon.io/docs/pantheon-yml/#enforce-https--hsts for valid values.
+enforce_https: full+subdomains
+protected_web_paths:
+  - /readme.html
+  - /license.txt
+  - /xmlrpc.php
+  - /wp-content/themes/outside-traineeship-boilerplate/acf-json
+  - /wp-content/themes/outside-traineeship-boilerplate/.eslintignore
+  - /wp-content/themes/outside-traineeship-boilerplate/.eslintrc
+  - /wp-content/themes/outside-traineeship-boilerplate/.gitignore
+  - /wp-content/themes/outside-traineeship-boilerplate/.stylelintignore
+  - /wp-content/themes/outside-traineeship-boilerplate/.stylelintrc
+  - /wp-content/themes/outside-traineeship-boilerplate/package-lock.json
+  - /wp-content/themes/outside-traineeship-boilerplate/package.json
+  - /wp-content/themes/outside-traineeship-boilerplate/composer.json
+  - /wp-content/themes/outside-traineeship-boilerplate/composer.lock
+  - /wp-content/themes/outside-traineeship-boilerplate/README.md
+  - /wp-content/themes/outside-traineeship-boilerplate/webpack.mix.js
