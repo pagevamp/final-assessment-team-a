@@ -17,35 +17,51 @@
 	$footer = get_field('footer', 'option');
 	$logo = $footer['logo'];
 	$footer_content = $footer['footer_content'];
+
+	$has_menu_items = wp_nav_menu(array('theme_location' => 'footer-menu', 'echo' => false)) !== false; // check if menu is empty or not
+
+	$is_assigned = has_nav_menu('footer-menu'); // check if menu location is assigned
 	?>
 
-	<section class="grid-container">
+	<section class="footer__container">
 		<div class="footer__content">
 			<?php foreach ($footer_content as $content): ?>
 				<div class="footer__details">
-					<p class="c3 text-primary"><?php echo $content['heading']; ?></p>
+					<?php if ($content['heading']): ?>
+						<p class="c3 text-primary"><?php echo $content['heading']; ?></p>
+					<?php endif; ?>
 
-					<ul class="footer__list">
-						<?php foreach ($content['list'] as $item): ?>
-							<li class="text-neutral-600"><?php echo $item['item']; ?></li>
-						<?php endforeach; ?>
-					</ul>
+					<?php if ($content['list'] = []): ?>
+						<ul class="footer__list">
+							<?php foreach ($content['list'] as $item): ?>
+								<?php if ($item['item']): ?>
+									<li class="text-neutral-600 sh3">
+										<a href="<?php echo $item['link'] ?? '#' ?>" class="text-neutral-600 text-decoration-none">
+											<?php echo $item['item']; ?>
+										</a>
+									</li>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>
 
 			<span class="icon-linkedin"></span>
 		</div>
 
-		<nav class="footer__nav">
-			<p class="c3 text-primary">Explore</p>
-			<?php
-			wp_nav_menu(array(
-				'theme_location'	=> 'footer-menu',
-				'menu_class'     	=> 'footer__menu',
-				'menu_id'			=> 'footer-menu',
-			));
-			?>
-		</nav>
+		<?php if ($has_menu_items && $is_assigned): ?>
+			<nav class="footer__nav">
+				<p class="c3 text-primary">Explore</p>
+				<?php
+					wp_nav_menu(array(
+						'theme_location'	=> 'footer-menu',
+						'menu_class'     	=> 'footer__menu',
+						'menu_id'			=> 'footer-menu',
+					));
+				?>
+			</nav>
+		<?php endif; ?>
 
 		<div class="footer__logo-container">
 			<?php if (!empty($logo)): ?>

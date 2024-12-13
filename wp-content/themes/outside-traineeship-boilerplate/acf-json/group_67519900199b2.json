@@ -109,6 +109,7 @@
                             "collapsed": "",
                             "button_label": "Add Row",
                             "rows_per_page": 20,
+                            "parent_repeater": "field_67519953257ad",
                             "sub_fields": [
                                 {
                                     "key": "field_675199fd257b1",
@@ -131,9 +132,30 @@
                                     "prepend": "",
                                     "append": "",
                                     "parent_repeater": "field_675199d0257af"
+                                },
+                                {
+                                    "key": "field_675921d80f236",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_675199d0257af"
                                 }
-                            ],
-                            "parent_repeater": "field_67519953257ad"
+                            ]
                         }
                     ]
                 }
@@ -158,5 +180,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733401123
+    "modified": 1733894638
 }

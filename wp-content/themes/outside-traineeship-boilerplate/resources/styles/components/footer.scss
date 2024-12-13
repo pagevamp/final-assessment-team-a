@@ -4,11 +4,23 @@
 
     padding-block: 2rem;
 
-    @media screen and (min-width: 720px) {
+    @media screen and (min-width: 1000px) {
         padding-inline: 5rem;
     }
 
-    .grid-container {
+    &__container {
+        display: grid;
+
+        @include grid-properties(4, 1.75rem, 1.5rem);
+
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: repeat(3, auto);
+            margin-inline: 2rem;
+            grid-gap: 3rem;
+        }
+        @include media-breakpoint-up(md) {
+            @include grid-properties(12, 5rem, 2.5rem);
+        }
 
         #{$self} {
 
@@ -21,12 +33,16 @@
                 flex-direction: column;
                 gap: 2.5rem;
 
-                @media screen and (min-width: 720px) {
-                    grid-column: 5 / 9;
+                @media screen and (min-width: 700px) {
+                    grid-column: 2 / 3;
                     padding-bottom: 0;
                     border-bottom: none;
                     padding-left: 2.5rem;
                     border-left: 1px solid $neutral-100;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    grid-column: 5 / 9;
                 }
 
                 #{$self} {
@@ -47,12 +63,16 @@
                 padding-bottom: 2.5rem;
                 border-bottom: 1px solid $neutral-100;
 
-                @media screen and (min-width: 720px) {
-                    grid-column: 9 / -1;
+                @media screen and (min-width: 700px) {
+                    grid-column: 3 / -1;
                     padding-bottom: 0;
                     border-bottom: none;
                     padding-left: 2.5rem;
                     border-left: 1px solid $neutral-100;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    grid-column: 9 / -1;
                 }
 
                 #{$self} {
@@ -67,6 +87,10 @@
                             line-height: 138%;
                             font-weight: 400;
                             letter-spacing: 0;
+
+                            &:hover {
+                                background-color: $neutral-100;
+                            }
 
                             @media screen and (min-width: 720px) {
                                 font-size: 26px;
@@ -96,9 +120,17 @@
                     width: 100%;
                 }
 
-                @media screen and (min-width: 720px) {
-                    grid-column: 1 / 5;
+                @media screen and (min-width: 700px) {
+
+                    #{$self}__logo {
+                        width: 150px;
+                    }
+                    grid-column: 1 / 2;
                     grid-row-start: 1;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    grid-column: 1 / 5;
 
                     #{$self}__logo {
                         width: 50%;
