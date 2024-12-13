@@ -1,0 +1,19 @@
+@use "sass:map";
+
+// Defining Gutters and Margins for bootstrap containers
+.grid-container {
+    display: grid;
+    @include grid-properties(4, 1.75rem, 1.5rem);
+
+    @media screen and (min-width: map.get($breakpoints, "mobile")) {
+        @include grid-properties(8, 2rem, 3rem);
+    }
+
+    @media screen and (min-width: map.get($breakpoints, "desktop")) {
+        @include grid-properties(12, 5rem, 2.5rem);
+    }
+
+    @media screen and (min-width: map.get($breakpoints, "desktop-wide")) {
+        @include grid-properties(12, auto, 2.5rem);
+    }
+}

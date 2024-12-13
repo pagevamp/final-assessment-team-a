@@ -1,0 +1,101 @@
+// Font files here
+
+// @font-face {
+//     font-family: "sunset-gothic-bold-pro";
+//     src: url("../../fonts/sunset-gothic-bold-pro.woff2") format("woff2"),
+//         url("../../fonts/sunset-gothic-bold-pro.woff") format("woff");
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+@font-face {
+    font-family: "General Sans";
+    src:  url('#{$font-path}/GeneralSans-Regular.eot');
+    src:  url('#{$font-path}/GeneralSans-Regular.eot#iefix') format('embedded-opentype'),
+      url('#{$font-path}/GeneralSans-Regular.ttf') format('truetype'),
+      url('#{$font-path}/GeneralSans-Regular.woff') format('woff'),
+      url('#{$font-path}/GeneralSans-Regular.svg') format('svg'),
+      url('#{$font-path}/GeneralSans-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+  font-family: "General Sans Medium";
+  src:  url('#{$font-path}/GeneralSans-Medium.eot');
+  src:  url('#{$font-path}/GeneralSans-Medium.eot#iefix') format('embedded-opentype'),
+    url('#{$font-path}/GeneralSans-Medium.ttf') format('truetype'),
+    url('#{$font-path}/GeneralSans-Medium.woff') format('woff'),
+    url('#{$font-path}/GeneralSans-Medium.svg') format('svg'),
+    url('#{$font-path}/GeneralSans-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+    font-family: "General Sans Italic";
+    src:  url('#{$font-path}/GeneralSans-Italic.eot');
+    src:  url('#{$font-path}/GeneralSans-Italic.eot#iefix') format('embedded-opentype'),
+      url('#{$font-path}/GeneralSans-Italic.ttf') format('truetype'),
+      url('#{$font-path}/GeneralSans-Italic.woff') format('woff'),
+      url('#{$font-path}/GeneralSans-Italic.svg') format('svg'),
+      url('#{$font-path}/GeneralSans-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "General Sans Medium Italic";
+    src:  url('#{$font-path}/GeneralSans-MediumItalic.eot');
+    src:  url('#{$font-path}/GeneralSans-MediumItalic.eot#iefix') format('embedded-opentype'),
+      url('#{$font-path}/GeneralSans-MediumItalic.ttf') format('truetype'),
+      url('#{$font-path}/GeneralSans-MediumItalic.woff') format('woff'),
+      url('#{$font-path}/GeneralSans-MediumItalic.svg') format('svg'),
+      url('#{$font-path}/GeneralSans-MediumItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+  font-family: "Reckless Neue Bold";
+  src:  url('#{$font-path}/RecklessNeue-Bold.eot');
+  src:  url('#{$font-path}/RecklessNeue-Bold.eot#iefix') format('embedded-opentype'),
+    url('#{$font-path}/RecklessNeue-Bold.ttf') format('truetype'),
+    url('#{$font-path}/RecklessNeue-Bold.woff') format('woff'),
+    url('#{$font-path}/RecklessNeue-Bold.svg') format('svg'),
+    url('#{$font-path}/RecklessNeue-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Reckless Neue Book";
+  src:  url('#{$font-path}/RecklessNeue-Book.eot');
+  src:  url('#{$font-path}/RecklessNeue-Book.eot#iefix') format('embedded-opentype'),
+    url('#{$font-path}/RecklessNeue-Book.ttf') format('truetype'),
+    url('#{$font-path}/RecklessNeue-Book.woff') format('woff'),
+    url('#{$font-path}/RecklessNeue-Book.svg') format('svg'),
+    url('#{$font-path}/RecklessNeue-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Reckless Neue Medium";
+  src:  url('#{$font-path}/RecklessNeue-Medium.eot');
+  src:  url('#{$font-path}/RecklessNeue-Medium.eot#iefix') format('embedded-opentype'),
+    url('#{$font-path}/RecklessNeue-Medium.ttf') format('truetype'),
+    url('#{$font-path}/RecklessNeue-Medium.woff') format('woff'),
+    url('#{$font-path}/RecklessNeue-Medium.svg') format('svg'),
+    url('#{$font-path}/RecklessNeue-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

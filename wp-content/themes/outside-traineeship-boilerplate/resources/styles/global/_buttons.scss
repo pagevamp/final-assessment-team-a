@@ -1,0 +1,124 @@
+@use "sass:map";
+
+//Primary Button
+
+.btn-primary {
+    background-color: $primary-red;
+    border: none;
+    color: $neutral-50;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive-buttons;
+
+    &::after {
+        content: "\e901";
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        color: inherit;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    &:hover {
+        background-color: $neutral-500;
+    }
+
+    &:disabled {
+        background-color: $neutral-200;
+    }
+}
+
+// Secondary button
+
+.btn-secondary {
+    background: transparent;
+    border: none;
+    border: 1px solid $primary-red;
+    color: $primary-red;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive-buttons();
+
+    &::after {
+        content: "\e901";
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        color: inherit;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    &:hover {
+        background-color: $primary-red;
+        color: $neutral-50;
+    }
+
+    &:disabled {
+        border: none;
+        background-color: $neutral-200;
+    }
+}
+
+// Tertiary button
+
+.btn-tertiary {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-red;
+    color: $primary-red;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive-tertiary-buttons();
+
+    &::after {
+        content: "\e901";
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        color: inherit;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    &:hover {
+        border-color: $neutral-600;
+        color: $neutral-600;
+    }
+
+    &:disabled {
+        border-color: $neutral-200;
+        color: $neutral-200;
+    }
+}
