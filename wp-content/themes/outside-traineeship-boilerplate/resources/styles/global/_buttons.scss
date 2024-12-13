@@ -24,6 +24,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
@@ -64,6 +65,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
@@ -78,6 +80,7 @@
     &:disabled {
         border: none;
         background-color: $neutral-200;
+        color: $neutral-50;
     }
 }
 
@@ -106,6 +109,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
