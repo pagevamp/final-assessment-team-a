@@ -38,12 +38,12 @@
 // Components Scss
 @import './components/footer.scss';
 @import './components/header.scss';
-// Component Scss
-@import 'styles/leadspace.scss';
-@import './styles/testimonials.scss';
+
 // Styleguide Scss
 @import './styleguide.scss';
-@import 'styles/department.scss';
+@import './components/section-title.scss';
+
+@import 'styles/featured-projects.scss';
 
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';
