@@ -145,6 +145,9 @@ function outside_traineeship_biolerplate_scripts() {
 	// swiper
 	wp_enqueue_style( 'swiper-cdn-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION );
 	wp_enqueue_script( 'swiper-cdn-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), _S_VERSION, true );
+
+	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), _S_VERSION );
+	wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' , array('jquery'), _S_VERSION, true );
 }
 add_action('wp_enqueue_scripts', 'outside_traineeship_biolerplate_scripts');
 
@@ -205,3 +208,40 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
 }
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
+add_filter( 'nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3 );
+/**
+ * Use namespaced data attribute for Bootstrap's dropdown toggles.
+ *
+ * @param array    $atts HTML attributes applied to the item's `<a>` element.
+ * @param WP_Post  $item The current menu item.
+ * @param stdClass $args An object of wp_nav_menu() arguments.
+ * @return array
+ */
+function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
+    if ( is_a( $args->walker, 'WP_Bootstrap_Navwalker' ) ) {
+        if ( array_key_exists( 'data-toggle', $atts ) ) {
+            unset( $atts['data-toggle'] );
+            $atts['data-bs-toggle'] = 'dropdown';
+        }
+    }
+    return $atts;
+}
+
+function add_custom_class_to_menu_links($atts, $item, $args) {
+    // Check if this is the specific menu location
+    if (isset($args->theme_location) && $args->theme_location === 'header-menu') {
+        // Add your custom class
+        $atts['class'] = 'text-lg text-neutral-600 nav-link';
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_custom_class_to_menu_links', 10, 3);

@@ -43,7 +43,7 @@
 
 @each $button-link, $properties in $button-links {
     .#{$button-link} {
-        @if $button-link == 'lg' {
+        @if $button-link == 'btn-lg' {
             font-family: 'General Sans Medium';
         }
         @else{
