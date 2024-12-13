@@ -12,7 +12,7 @@
             $image = $department_detail['image'];    
         ?>
 
-            <div class="department__details">
+            <div class="container p-0 department__details">
                 <!-- Background Image -->
                 <img class="department__image" src="<?php echo $image['url'];?>" alt="<?php echo $image['url'];?>">
                 
@@ -29,7 +29,7 @@
 
                     <!-- Button -->
                     <div class="department__button">
-                        <button class="btn-primary"></button>
+                        <a class="btn-primary text-decoration-none" href="#"></a>
                     </div>
                 </div>
             </div>
