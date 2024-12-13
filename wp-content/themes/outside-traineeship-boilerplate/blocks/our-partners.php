@@ -19,7 +19,7 @@ $partners_logo = $partners['partners_logo'];
             </div>
         <?php endforeach; ?>
         <div class="partners__image-container">
-            <a href="#">
+            <a href="#" class="text-decoration-none">
                 <button class="btn-tertiary text-sm text-decoration-none" aria-label="View All Partners">View All Partners</button>
             </a>
         </div>
