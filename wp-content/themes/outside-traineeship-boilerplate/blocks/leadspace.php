@@ -4,7 +4,7 @@
     $image= $leadspace_content['background_image'];
 ?>
 <?php if(!empty($heading) || !empty($image)): ?>
-    <section id="leadspace" class="container m-0 p-0 leadspace">
+    <section id="leadspace" class="leadspace">
 
         <!-- Background Image -->
         <?php if ($image): ?>
