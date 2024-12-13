@@ -7,7 +7,7 @@
     <h2 id="testimonials-heading" class="visually-hidden">Client Testimonials</h2>
 
     <?php if((!empty($testimonials)) && !empty($testimonials['testimonial'])):?>
-        <div class="swiper" aria-live="polite" tabindex="0">
+        <div class="swiper testimonialswiper" aria-live="polite" tabindex="0">
             <div class="swiper-wrapper">
 
                 <!-- Fetching the data -->

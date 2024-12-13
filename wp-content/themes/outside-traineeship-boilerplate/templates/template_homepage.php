@@ -5,7 +5,6 @@ Template Name: Home-Page Template
 
 get_header();
 
-get_template_part('blocks/homeSection/leadspace');
 the_content();
 
 $args = [
@@ -65,4 +64,8 @@ $query = new WP_Query($args);
 
 </section>
 
-<?php get_footer(); ?>
+
+
+<?php 
+
+get_footer(); ?>

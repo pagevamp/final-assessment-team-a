@@ -22,7 +22,7 @@
 ?>
 
 <section id="features" class="<?php echo $sectionClass; ?> ">
-        <div class="<?php echo $containerClass; echo $alternate? "  ms-2xl": " me-2xl"; ?>">
+        <div class="<?php echo $containerClass;  ?>">
 
             <div class="features__imagecontainer">
             <?php if (!empty($image)): ?>

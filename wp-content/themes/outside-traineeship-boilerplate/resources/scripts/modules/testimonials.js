@@ -1,4 +1,12 @@
-const swiper = new Swiper(".swiper", {
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const swiper = new Swiper(".testimonialswiper", {
+  modules: [Pagination, Navigation],
   // loop: true,
     pagination: {
       el: ".swiper-pagination",
@@ -17,4 +25,8 @@ const swiper = new Swiper(".swiper", {
         document.getElementById('left-number').innerText = String(currentIndex).padStart(2, '0');         
       }
     }
+    
 });
+const totalSlides = swiper.slides.length;
+// Update the HTML
+document.getElementById('right-number').textContent = '0'+ totalSlides;

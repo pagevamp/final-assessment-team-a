@@ -1,3 +1,10 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 document.addEventListener("DOMContentLoaded", () => {
   let mainSwipers = document.querySelectorAll('.main-swiper');
   let swiperInstances = {}; // Object to keep track of Swiper instances
@@ -17,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initialize Swiper if not already initialized
         if (!swiperInstances[swiperId]) {
           swiperInstances[swiperId] = new Swiper(`#${swiperId}`, {
+            modules: [Pagination, Navigation],
             slidesPerView: "auto",
             navigation: {
               nextEl: ".btn-swiper-next",

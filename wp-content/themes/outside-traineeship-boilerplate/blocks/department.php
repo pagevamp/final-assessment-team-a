@@ -21,7 +21,7 @@
                 <div class="department__content">
                     <!-- Heading -->
                     <div class="department__content-head">
-                        <h2 class="department__heading h2"><?php echo $heading;?></h2> 
+                        <h1 class="department__heading h1"><?php echo $heading;?></h1> 
 
                         <!-- Subtext -->
                         <p class="department__caption c3"><?php echo $caption ?></p>
