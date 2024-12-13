@@ -53,4 +53,37 @@
     grid-template-columns: repeat($grid-columns, 1fr);
     margin-inline: $margin;
     grid-gap: $gutter;
-} 
+}
+
+// Mixin for selecting start and end elements of row of our-partners grid
+@mixin edge-row-selector($columns) {
+    $grid-end-width: clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+    &:nth-child(#{$columns}n + 1) {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            top: 0;
+            right: 100%;
+            border-top: 1px solid $neutral-100;
+            border-bottom: 1px solid $neutral-100;
+            width: $grid-end-width;
+        }
+    }
+    &:nth-child(#{$columns}n) {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 100%;
+            border-top: 1px solid $neutral-100;
+            border-bottom: 1px solid $neutral-100;
+            width: $grid-end-width;
+        }
+    }
+}
