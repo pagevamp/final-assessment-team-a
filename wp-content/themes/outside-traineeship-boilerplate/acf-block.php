@@ -5,6 +5,7 @@ add_action('acf/init', function() {
             'leadspace'  => 'Leadspace',
             'stories'  => 'Stories',
             'department' => 'Department',
+            'testimonials' => 'Testimonials',
             'featured_projects' => 'Featured Projects',
         ];
 
