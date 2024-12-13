@@ -6,38 +6,50 @@
 
     <h2 id="testimonials-heading" class="visually-hidden">Client Testimonials</h2>
 
-    <?php if(!empty($testimonials)):?>
+    <?php if((!empty($testimonials)) && !empty($testimonials['testimonial'])):?>
         <div class="swiper" aria-live="polite" tabindex="0">
             <div class="swiper-wrapper">
 
                 <!-- Fetching the data -->
                 <?php foreach ($testimonials['testimonial'] as $testimonial):
-                    $image = $testimonial['client_logo'];
-                    $testimonial_content = $testimonial['testimonial_content'];
-                    $name = $testimonial['client_name'];
-                    $company = $testimonial['client_company'];                    
+                    $image = $testimonial['client_logo'] ?? '';
+                    $testimonial_content = $testimonial['testimonial_content'] ?? '';
+                    $name = $testimonial['client_name'] ?? ''; 
+                    $company = $testimonial['client_company'] ?? '';                    
                 ?>
 
                     <div class="swiper-slide" role="group" aria-roledescription="slide">
+                        <?php if(!empty($image) || !empty($testimonial_content) || !empty($name) || !empty($company)):?>
+                            <div class="testimonials__item">
+                                <?php if ($image): ?>
+                                    <img 
+                                        src="<?php echo $image['url']; ?>" 
+                                        class="testimonials__logo" 
+                                        alt="<?php echo $name; ?>'s company logo" 
+                                        tabindex="0">
+                                <?php endif; ?>
 
-                       <div class="testimonials__item">
-                            <?php if ($image): ?>
-                                <img 
-                                    src="<?php echo $image['url']; ?>" 
-                                    class="testimonials__logo" 
-                                    alt="<?php echo $name; ?>'s company logo" 
-                                    tabindex="0">
-                            <?php endif; ?>
+                                <div class="testimonials__content" tabindex="0">
+                                    <span class="icon-quote text-primary" aria-hidden="true"></span>
+                                    <?php if($testimonial_content):?>
+                                        <h5 class="h5">"<?php echo $testimonial_content; ?>"</h5>
+                                    <?php endif; ?>  
 
-                            <div class="testimonials__content" tabindex="0">
-                                <span class="icon-quote text-primary" aria-hidden="true"></span>
-                                <h5 class="h5">"<?php echo $testimonial_content; ?>"</h5>
-                                <div class="testimonials__info">
-                                    <p class="c2 text-neutral-500 text-md-neutral-100 testimonials__name" tabindex="0"><?php echo $name; ?></p>
-                                    <p class="text-sm-all text-neutral-200 testimonials__company" tabindex="0"><?php echo $company; ?></p>
+                                    <?php if(!empty($name) || !empty($company) ):?>
+                                        <div class="testimonials__info">
+
+                                            <?php if($name):?>
+                                                <p class="c2 text-neutral-500 text-md-neutral-100 testimonials__name" tabindex="0"><?php echo $name; ?></p>
+                                            <?php endif; ?>
+                                            
+                                            <?php if($company ):?>
+                                                <p class="text-sm-all text-neutral-200 testimonials__company" tabindex="0"><?php echo $company; ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
-                       </div>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
