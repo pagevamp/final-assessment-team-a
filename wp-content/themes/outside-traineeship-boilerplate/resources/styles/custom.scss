@@ -23,24 +23,6 @@
 // Root scss
 @import './../../node_modules/bootstrap/scss/reboot';
 
-// Normalize Scss
-@import 'global/fonts';
-@import 'global/buttons';
-@import 'global/colors';
-@import 'global/functions';
-@import 'global/icons';
-@import 'global/typography';
-@import 'global/texture';
-@import 'global/grids';
-//@import './common/header-category';
-
-// Components Scss
-@import './components/footer.scss';
-
-// Styleguide Scss
-@import './styleguide.scss';
-@import './components/section-title.scss';
-
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';
 @import './../../node_modules/bootstrap/scss/grid';
