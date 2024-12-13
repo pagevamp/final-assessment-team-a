@@ -1,0 +1,92 @@
+@import './../custom.scss';
+
+.projects {
+
+    $self: ".projects";
+
+    padding: 3rem 1.75rem;
+
+    .h2 {
+        margin-bottom: 6rem;
+    }
+
+    .main-swiper {
+        width: 100%;
+
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            .swiper-slide {
+
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                padding-bottom: 2rem;
+                border-bottom: 1px solid $neutral-100;
+
+                .image-container {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        aspect-ratio: 4 / 3;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .swiper-navigation {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-up (md) {
+    .projects {
+        padding-block: 5rem;
+
+        $self: ".partners";
+
+        .h2 {
+            margin-bottom: 10rem;
+        }
+
+        .main-swiper {
+            height: 100%;
+
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+                flex-direction: row;
+
+                .swiper-slide {
+                    padding-inline: 5rem;
+
+                    width: 36%;
+                    height: 100%;
+
+                    padding-bottom: 0;
+                    border-bottom: none;
+
+                    border-right: 1px solid $neutral-100;
+                }
+            }
+
+            .swiper-navigation {
+                margin-top: 4rem;
+                margin-left: 5rem;
+
+                display: flex;
+                gap: 1rem;
+
+                .btn-swiper-prev {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

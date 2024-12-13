@@ -37,8 +37,10 @@
 
 // Components Scss
 @import './components/footer.scss';
+@import './components/section-title.scss';
 // Component Scss
 @import 'styles/leadspace.scss';
+@import 'styles/featured-projects.scss';
 
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';
