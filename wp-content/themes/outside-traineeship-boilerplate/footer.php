@@ -31,7 +31,7 @@
 						<p class="c3 text-primary"><?php echo $content['heading']; ?></p>
 					<?php endif; ?>
 
-					<?php if ($content['list'] = []): ?>
+					<?php if ($content['list'] !== []): ?>
 						<ul class="footer__list">
 							<?php foreach ($content['list'] as $item): ?>
 								<?php if ($item['item']): ?>
