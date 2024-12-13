@@ -5,6 +5,7 @@
 .btn-primary {
     background-color: $primary-red;
     border: none;
+    border-radius: 0;
     color: $neutral-50;
 
     display: flex;
@@ -45,6 +46,7 @@
 .btn-secondary {
     background: transparent;
     border: none;
+    border-radius: 0;
     border: 1px solid $primary-red;
     color: $primary-red;
 
@@ -89,6 +91,7 @@
 .btn-tertiary {
     background: transparent;
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid $primary-red;
     color: $primary-red;
 

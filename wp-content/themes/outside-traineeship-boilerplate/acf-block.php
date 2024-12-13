@@ -4,6 +4,7 @@ add_action('acf/init', function() {
         $biolerplateModules = [
             'leadspace'  => 'Leadspace',
             'stories'  => 'Stories',
+            'department' => 'Department',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
