@@ -27,6 +27,7 @@
 
         #{$self}__emergency {
             p {
+                text-wrap: nowrap;
                 margin-bottom: 0;
             }
 
@@ -88,6 +89,7 @@
                     }
 
                     .nav-item {
+                        text-wrap: nowrap;
 
                         @include media-breakpoint-down(md) {
                             padding-bottom: 1.5rem;

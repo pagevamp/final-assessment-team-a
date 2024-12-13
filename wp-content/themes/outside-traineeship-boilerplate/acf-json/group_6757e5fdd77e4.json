@@ -32,7 +32,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
+                    "message": "Do you want the image to be oriented at the left?",
                     "default_value": 0,
                     "allow_in_bindings": 1,
                     "ui": 0,
@@ -78,10 +78,10 @@
                         },
                         {
                             "key": "field_675810fd355ab",
-                            "label": "Body",
-                            "name": "body",
+                            "label": "Praragraphs",
+                            "name": "paragraphs",
                             "aria-label": "",
-                            "type": "textarea",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -90,19 +90,44 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": "",
-                            "placeholder": "",
-                            "new_lines": ""
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_675c0bcc66c64",
+                                    "label": "Paragraph",
+                                    "name": "paragraph",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "rows": "",
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_675810fd355ab"
+                                }
+                            ]
                         },
                         {
                             "key": "field_67581120355ac",
-                            "label": "Button Label",
-                            "name": "button_label",
+                            "label": "Buttons",
+                            "name": "buttons",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -111,30 +136,73 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_67581130355ad",
-                            "label": "Button Link",
-                            "name": "button_link",
-                            "aria-label": "",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": ""
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_675c07bbb73cb",
+                                    "label": "Button Label",
+                                    "name": "button_label",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_675c07c7b73cc",
+                                    "label": "Button Link",
+                                    "name": "button_link",
+                                    "aria-label": "",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_675c07dfb73cd",
+                                    "label": "Button Type",
+                                    "name": "button_type",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "primary": "Primary Button",
+                                        "secondary": "Secondary Button",
+                                        "tertiary": "Tertiary Button"
+                                    },
+                                    "default_value": "",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "layout": "horizontal"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -163,32 +231,6 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "medium"
-                },
-                {
-                    "key": "field_675935d82db39",
-                    "label": "Page",
-                    "name": "page",
-                    "aria-label": "",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "home": "Home",
-                        "about": "About"
-                    },
-                    "default_value": "",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "allow_in_bindings": 1,
-                    "layout": "vertical",
-                    "save_other_choice": 0
                 }
             ]
         }
@@ -211,5 +253,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733901727
+    "modified": 1734086021
 }

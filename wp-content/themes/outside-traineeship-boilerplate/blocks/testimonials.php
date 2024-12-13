@@ -4,6 +4,8 @@
 
 <section id="testimonials" class="testimonials bg-texture" aria-labelledby="testimonials-heading">
 
+
+    <div class="container">
     <h2 id="testimonials-heading" class="visually-hidden">Client Testimonials</h2>
 
     <?php if((!empty($testimonials)) && !empty($testimonials['testimonial'])):?>
@@ -65,4 +67,5 @@
             </div>
         </div>
     <?php endif; ?>
+    </div>
 </section>
