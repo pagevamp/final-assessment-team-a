@@ -2,9 +2,9 @@
 add_action('acf/init', function() {
     if( function_exists('acf_register_block_type') ) {
         $biolerplateModules = [
-            'leadspace'  => 'Leadspace',
-            'features'  => 'Features',
-            'leadership' => 'Leadership',
+            'leadspace'     => 'Leadspace',
+            'features'      => 'Features',
+            'leadership'    => 'Leadership',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
