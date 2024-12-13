@@ -1,0 +1,47 @@
+name: Setup Terminus
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Installing PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: '8.0'
+      - name: Setup node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.20.4'
+      - name: Init git and pantheon
+        if: success()
+        run: |
+          git config --global user.email "${{ github.actor }}@noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+          git config --global core.fileMode false
+          mkdir -p $HOME/.ssh/
+          chmod 700 $HOME/.ssh/
+          echo -n "${{ secrets.SSH_KEY_PRIVATE }}" | base64 --decode > $HOME/.ssh/id_rsa
+          chmod 600 $HOME/.ssh/id_rsa
+          stat $HOME/.ssh/id_rsa
+          touch "$HOME/.ssh/config"
+          echo "StrictHostKeyChecking no" >> "$HOME/.ssh/config"
+          mkdir -p $HOME/.terminus/plugins
+          composer install
+          composer create-project --no-dev -n -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta17
+
+      - name: Deploy to Pantheon for branch
+        if: github.event_name == 'push' && success()
+        run: |
+          cd wp-content/themes/outside-traineeship-boilerplate && yarn install && yarn build:production
+          cd ../../../
+          git fetch --unshallow origin
+          ./vendor/bin/terminus auth:login --machine-token="${{ secrets.PANTHEON_MACHINE_TOKEN }}"
+          # ./vendor/bin/terminus env:clone-content "${{ secrets.TERMINUS_SITE }}".dev dev
+          ./vendor/bin/terminus build:env:push -n "${{ secrets.TERMINUS_SITE }}".dev
