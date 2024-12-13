@@ -53,7 +53,7 @@ $query = new WP_Query($args);
                                     <?php echo $paragraphs[0]['paragraph']; ?>
                                 </p>
                             </div>
-                            <a href="#" class="text-sm text-primary">Continue Reading</a>
+                            <a href="#" class="text-sm text-primary text-decoration-none">Continue Reading</a>
 
                         <?php endif; ?>
                     </div>

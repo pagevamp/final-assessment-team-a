@@ -1,26 +1,27 @@
+
+import Swiper from 'swiper/core';
+import { Pagination, Navigation } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 document.addEventListener("DOMContentLoaded", () => {
-    let mainSwipers = document.querySelectorAll('.historyswiper');
-    let swiperInstances = {}; // Object to keep track of Swiper instances
-  
-    // Function to initialize or destroy Swipers based on screen width
-    const handleSwiper = () => {
-      mainSwipers.forEach((mainSwiper) => {
-        let swiperId = mainSwiper.id;
-  
-      
-          // Initialize Swiper if not already initialized
-          if (!swiperInstances[swiperId]) {
-            swiperInstances[swiperId] = new Swiper(`#${swiperId}`, {
-              
-            });
-          }
-        
+    new Swiper('.historyswiper', {
+        modules: [Pagination, Navigation],
+       
+        // calculateHeight: true,
+        loop: true,
+        slidesPerView: "auto",
+        pagination: {
+          el: '.swiper-pagination',
+          
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       });
-    };
-  
-    // Run on initial load
-    handleSwiper();
-  
-    // Attach resize event listener
-    window.addEventListener('resize', handleSwiper);
+      console.log("hi");
 });
+
