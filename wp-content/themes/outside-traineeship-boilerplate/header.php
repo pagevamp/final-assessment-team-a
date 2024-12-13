@@ -35,7 +35,7 @@
 		$is_assigned = has_nav_menu('header-menu'); // check if menu location is assigned
 		?>
 
-		<header id="header" class="header" role="banner">
+		<header id="header" class="header container" role="banner">
 			<nav class="navbar navbar-expand-lg navbar-light" role="navigation">
 				<div class="container-fluid">
 					<!-- Logo Section -->
@@ -96,13 +96,13 @@
 					<!-- Main Header Contact Info -->
 					<?php if (!empty($emergency['heading']) || !empty($emergency['phone'])): ?>
 						<div class="header__contact" aria-label="Emergency contact">
-							<a target="_blank" href="tel:<?php echo $emergency['phone']; ?>" class="header__emergency">
-								<p class="text-xsm text-neutral-600"><?php echo $emergency['heading']; ?></p>
+							<div class="header__emergency">
+								<p class="text-xsm text-neutral-600 text-center"><?php echo $emergency['heading']; ?></p>
 
 								<?php if (!empty($emergency['phone'])): ?>
-									<p class="text-lg text-neutral-600"><span class="icon-phone-call"></span> <?php echo $emergency['phone']; ?></p>
+									<a target="_blank" href="tel:<?php echo $emergency['phone']; ?>" class="text-lg text-neutral-600 text-decoration-none"><span class="icon-phone-call"></span> <?php echo $emergency['phone']; ?></p>
 								<?php endif; ?>
-							</a>
+							</div>
 						</div>
 					<?php endif; ?>
 				</div>
