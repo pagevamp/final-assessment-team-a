@@ -1,0 +1,100 @@
+@use "sass:map";
+
+@import './../custom.scss';
+
+.partners {
+    $grid-end-width: clamp(1.75rem, 1.75rem + 0.369vw, 5rem);
+    margin-block: clamp(3rem, 5vw, 5rem);
+    padding-inline: $grid-end-width;
+
+    $self: ".partners";
+
+    .grid-block {
+        border-inline: 1px solid $neutral-100;
+        height: $grid-end-width;
+    }
+
+    &__header {
+        margin-bottom: 4rem;
+    }
+
+    &__container {
+        display: grid;
+
+        $columns: 2;
+        grid-template-columns: repeat($columns, 1fr);
+
+        #{$self} {
+
+            &__image-container {
+                display: grid;
+                place-items: center;
+                border: 1px solid $neutral-100;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+
+                @include edge-row-selector($columns);
+            }
+        }
+
+    }
+
+    .btn-tertiary {
+        &::after {
+            display: none;
+        }
+    }
+
+    .sr-only {
+        visibility: hidden;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .partners {
+        $self: ".partners";
+
+        &__header {
+            margin-bottom: 4.5rem;
+        }
+
+        &__container {
+            $columns: 3;
+            grid-template-columns: repeat($columns, 1fr);
+
+            #{$self} {
+
+                &__image-container {
+                    $columns: 3;
+                    @include edge-row-selector($columns);
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .partners {
+        $self: ".partners";
+
+        &__header {
+            margin-bottom: 5.5rem;
+        }
+
+        &__container {
+            $columns: 4;
+            grid-template-columns: repeat($columns, 1fr);
+
+            #{$self} {
+
+                &__image-container {
+                    $columns: 4;
+                    @include edge-row-selector($columns);
+                }
+            }
+        }
+    }
+}

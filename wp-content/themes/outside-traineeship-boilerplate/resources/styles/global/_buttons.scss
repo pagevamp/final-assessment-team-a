@@ -5,6 +5,7 @@
 .btn-primary {
     background-color: $primary-red;
     border: none;
+    border-radius: 0;
     color: $neutral-50;
 
     display: flex;
@@ -24,6 +25,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
@@ -44,6 +46,7 @@
 .btn-secondary {
     background: transparent;
     border: none;
+    border-radius: 0;
     border: 1px solid $primary-red;
     color: $primary-red;
 
@@ -64,6 +67,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
@@ -78,6 +82,7 @@
     &:disabled {
         border: none;
         background-color: $neutral-200;
+        color: $neutral-50;
     }
 }
 
@@ -86,6 +91,7 @@
 .btn-tertiary {
     background: transparent;
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid $primary-red;
     color: $primary-red;
 
@@ -106,6 +112,7 @@
         text-transform: none;
         line-height: 1;
         color: inherit;
+        font-size: 24px;
 
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;

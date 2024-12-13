@@ -32,7 +32,7 @@ $displays: (
         "letter-spacing": -0.32px,
         "responsive": (
             "tablet": (
-                "font-size": 50px,
+                "font-size": 64px,
                 "line-height": 100%,
                 "letter-spacing": -0.5px
             ),
@@ -53,7 +53,7 @@ $headings: (
         "letter-spacing": 0,
         "responsive": (
             "tablet": (
-                "font-size": 48px,
+                "font-size": 52px,
                 "line-height": 110%,
                 "letter-spacing": 0,
             ),
@@ -400,7 +400,7 @@ $captions: (
 );
 
 $button-links: (
-    "lg": (
+    "btn-lg": (
         "font-size": 16px,
         "line-height": 150%,
         "font-weight": 500,
@@ -418,7 +418,7 @@ $button-links: (
             )
         )
     ),
-    "nav": (
+    "btn-nav": (
         "font-size": 16px,
         "line-height": 150%,
         "font-weight": 500,

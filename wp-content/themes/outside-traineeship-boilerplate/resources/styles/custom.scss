@@ -1,4 +1,3 @@
-
 // Common imports
 @import './common-imports';
 
@@ -23,27 +22,6 @@
 @import './../../node_modules/bootstrap/scss/root';
 // Root scss
 @import './../../node_modules/bootstrap/scss/reboot';
-
-// Normalize Scss
-@import 'global/fonts';
-@import 'global/buttons';
-@import 'global/colors';
-@import 'global/functions';
-@import 'global/icons';
-@import 'global/typography';
-@import 'global/texture';
-@import 'global/grids';
-//@import './common/header-category';
-
-// Components Scss
-@import './components/footer.scss';
-@import './components/header.scss';
-
-// Styleguide Scss
-@import './styleguide.scss';
-@import './components/section-title.scss';
-
-@import './styles/featured-projects.scss';
 
 /** Extra layer of bootstrap Only */
 @import './../../node_modules/bootstrap/scss/containers';

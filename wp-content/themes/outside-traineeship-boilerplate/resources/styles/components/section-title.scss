@@ -1,0 +1,17 @@
+.text-section-title {
+    position: relative;
+    width: max-content;
+    margin-bottom: 4rem;
+    margin-inline: auto;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        height: 1px;
+        width: 50%;
+        transform: translateX(-50%);
+        background-color: $primary;
+    }
+}
