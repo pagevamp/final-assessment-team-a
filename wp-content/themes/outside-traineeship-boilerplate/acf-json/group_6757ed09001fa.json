@@ -159,7 +159,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/stories------------------------------------"
+                "value": "acf\/stories"
             }
         ]
     ],
