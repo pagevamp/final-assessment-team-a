@@ -2,23 +2,39 @@ name: Setup Terminus
 on:
   push:
     branches:
-      - stage
+      - main
   pull_request:
     branches:
-      - stage
+      - main
+# env:
+#   pantheon_env: 'dev'
+#   pantheon_repo: ${{ secrets.PANTHEON_REPO }}
+#   pantheon_site_name: ${{ secrets.TERMINUS_SITE }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Installing PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: '8.0'
+          php-version: '8.2'
       - name: Setup node version
         uses: actions/setup-node@v1
         with:
-          node-version: '18.20.4'
+          node-version: '18.12.1'
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Init git and pantheon
         if: success()
         run: |
@@ -34,14 +50,32 @@ jobs:
           echo "StrictHostKeyChecking no" >> "$HOME/.ssh/config"
           mkdir -p $HOME/.terminus/plugins
           composer install
-          composer create-project --no-dev -n -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta17
+          ./vendor/bin/terminus self:plugin:install terminus-build-tools-plugin
+          #composer create-project --no-dev -n -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta17
 
       - name: Deploy to Pantheon for branch
         if: github.event_name == 'push' && success()
         run: |
-          cd wp-content/themes/outside-traineeship-boilerplate && yarn install && yarn build:production
+          cd wp-content/themes/ternAi && composer install --no-dev -n -o && yarn install && yarn build
+          cd ../../../
+          ./vendor/bin/terminus auth:login --machine-token="${{ secrets.PANTHEON_MACHINE_TOKEN }}"
+          commit_message=$(git log -1 --pretty=%B)
+          git fetch --unshallow origin
+          ./vendor/bin/terminus build:env:push -n "${{ secrets.TERMINUS_SITE }}".dev
+
+      - name: multi-dev to Pantheon for PR
+        if: github.event_name == 'pull_request' && success()
+        run: |
+          cd wp-content/themes/ternAi && composer install --no-dev -n -o && yarn install && yarn build
           cd ../../../
           git fetch --unshallow origin
           ./vendor/bin/terminus auth:login --machine-token="${{ secrets.PANTHEON_MACHINE_TOKEN }}"
-          # ./vendor/bin/terminus env:clone-content "${{ secrets.TERMINUS_SITE }}".dev dev
-          ./vendor/bin/terminus build:env:push -n "${{ secrets.TERMINUS_SITE }}".dev
+          export PULL_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          ./vendor/bin/terminus build:env:create -n "${{ secrets.TERMINUS_SITE }}".dev pr-$PULL_NUMBER
+
+      - name: Delete old pr in multi-dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHUB_PERSONAL_TOKEN }}
+        run: |
+          ./vendor/bin/terminus auth:login --machine-token="${{ secrets.PANTHEON_MACHINE_TOKEN }}"
+          ./vendor/bin/terminus build:env:delete:pr -n "${{ secrets.TERMINUS_SITE }}" --yes
