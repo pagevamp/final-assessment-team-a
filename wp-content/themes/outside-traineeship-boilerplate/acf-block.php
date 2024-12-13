@@ -8,6 +8,7 @@ add_action('acf/init', function() {
             'testimonials' => 'Testimonials',
             'featured_projects' => 'Featured Projects',
             'our_partners' => 'Our Partners',
+            'features'  => 'Features',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {

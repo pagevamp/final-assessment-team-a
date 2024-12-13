@@ -3,17 +3,20 @@
     $heading = $leadspace_content['heading'];
     $image= $leadspace_content['background_image'];
 ?>
-
-<section id="leadspace" class="leadspace">
-    <?php if(!empty($leadspace_content)): ?>
+<?php if(!empty($heading) || !empty($image)): ?>
+    <section id="leadspace" class="leadspace">
 
         <!-- Background Image -->
-        <img class="leadspace__image" src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
-        
+        <?php if ($image): ?>
+            <img class="leadspace__image" src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+        <?php endif; ?>
+
         <div class="leadspace__overlay bg-overlay-20"></div>
 
         <!-- Heading -->
-        <h1 class="leadspace__heading d1"><?php echo $heading;?></h1> 
+        <?php if ($heading): ?>
+            <h1 class="leadspace__heading d1"><?php echo $heading;?></h1> 
+        <?php endif; ?>
 
-    <?php endif?>
-</section>
+    </section>
+<?php endif?>
