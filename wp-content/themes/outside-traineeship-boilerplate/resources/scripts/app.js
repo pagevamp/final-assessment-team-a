@@ -1,1 +1,1 @@
-console.log('App JS hello world');
+import './global/header.js';
