@@ -68,6 +68,7 @@
             #{$self} {
 
                 &__image-container {
+                    box-sizing: border-box;
                     $columns: 3;
                     @include edge-row-selector($columns);
                 }

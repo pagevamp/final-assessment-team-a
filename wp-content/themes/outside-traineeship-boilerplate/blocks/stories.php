@@ -9,7 +9,7 @@
 ?>
 
 <section id="stories" class="stories" aria-labelledby="stories-heading">
-    <div class="stories__content">
+    <div class="stories__content container">
         <?php if (!empty($subheading)): ?>
             <p id="stories-heading" class="c1 text-neutral-200"><?php echo $subheading; ?></p>
         <?php endif; ?>

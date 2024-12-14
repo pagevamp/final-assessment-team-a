@@ -9,6 +9,9 @@ add_action('acf/init', function() {
             'featured_projects' => 'Featured Projects',
             'our_partners' => 'Our Partners',
             'features'  => 'Features',
+            'leadership' => 'Leadership',
+            'vimeo_video' => 'Vimeo Video',
+            'history'   => 'History',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {

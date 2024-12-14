@@ -26,16 +26,19 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<?php
-		$header		= get_field('header_content', 'option');
-		$logo		= $header['logo'];
-		$emergency	= $header['emergency_contact'];
+		$header			= get_field('header_content', 'option');
+		$logo			= $header['logo'];
+		$emergency		= $header['emergency_contact'];
+
+		$socials		= get_field('socials', 'option');
+		$linkedin	= $socials['linkedin'];
 
 		$has_menu_items = wp_nav_menu(array('theme_location' => 'header-menu', 'echo' => false)) !== false; // check if menu is empty or not
 
-		$is_assigned = has_nav_menu('header-menu'); // check if menu location is assigned
+		$is_assigned	= has_nav_menu('header-menu'); // check if menu location is assigned
 		?>
 
-		<header id="header" class="header" role="banner">
+		<header id="header" class="header container" role="banner">
 			<nav class="navbar navbar-expand-lg navbar-light" role="navigation">
 				<div class="container-fluid">
 					<!-- Logo Section -->
@@ -83,7 +86,9 @@
 
 						<!-- Emergency Contact Information in Offcanvas -->
 						<div class="offcanvas-header">
-							<span class="icon-linkedin" aria-hidden="true"></span>
+							<a href="<?php echo $linkedin['url']; ?>" target="<?php echo $linkedin['target']; ?>" title="LinkedIn">
+								<span class="icon-linkedin text-decoration-none text-neutral-600" aria-hidden="true"></span>
+							</a>
 							<?php if (!empty($emergency['heading']) || !empty($emergency['phone'])): ?>
 								<div class="header__emergency">
 									<p class="text-xsm text-neutral-600"><?php echo $emergency['heading']; ?></p>
@@ -96,13 +101,13 @@
 					<!-- Main Header Contact Info -->
 					<?php if (!empty($emergency['heading']) || !empty($emergency['phone'])): ?>
 						<div class="header__contact" aria-label="Emergency contact">
-							<a target="_blank" href="tel:<?php echo $emergency['phone']; ?>" class="header__emergency">
-								<p class="text-xsm text-neutral-600"><?php echo $emergency['heading']; ?></p>
+							<div class="header__emergency">
+								<p class="text-xsm text-neutral-600 text-center"><?php echo $emergency['heading']; ?></p>
 
 								<?php if (!empty($emergency['phone'])): ?>
-									<p class="text-lg text-neutral-600"><span class="icon-phone-call"></span> <?php echo $emergency['phone']; ?></p>
+									<a target="_blank" href="tel:<?php echo $emergency['phone']; ?>" class="text-lg text-neutral-600 text-decoration-none"><span class="icon-phone-call"></span> <?php echo $emergency['phone']; ?></a>
 								<?php endif; ?>
-							</a>
+							</div>
 						</div>
 					<?php endif; ?>
 				</div>

@@ -27,7 +27,7 @@
             
             &__content-head {
                 position: absolute;
-                top: 10%;
+                top: 13%;
                 left: 10%;
                 color: #fff;
                 z-index: 2;   
@@ -45,11 +45,11 @@
             &__button{
                 position: absolute;
                 z-index: 2;
-                bottom: 5%;
-                right: 5%;
+                bottom: 7%;
+                right: 8%;
                 .btn-primary{
                     // width: 52px;
-                    height: 52px;
+                    
                 }
             }
         }
