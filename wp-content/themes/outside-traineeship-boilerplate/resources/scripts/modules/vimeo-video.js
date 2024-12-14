@@ -1,4 +1,4 @@
-import Player from '@vimeo/player';
+// import Player from '@vimeo/player';
 
 document.addEventListener('DOMContentLoaded', function () {
     const iframe = document.getElementById('vimeo-player');

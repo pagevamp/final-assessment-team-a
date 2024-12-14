@@ -6,6 +6,7 @@
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "dependencies": {
     "@vimeo/player": "^2.25.0",
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "5.3.2",
     "swiper": "^11.1.15"
   },
