@@ -7,21 +7,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 document.addEventListener("DOMContentLoaded", () => {
-    new Swiper('.historyswiper', {
-        modules: [Pagination, Navigation],
-       
-        // calculateHeight: true,
-        loop: true,
-        slidesPerView: "auto",
-        pagination: {
-          el: '.swiper-pagination',
-          
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
-      console.log("hi");
+  new Swiper('.history-swiper', {
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: '.swiper-pagination',
+      
+    },
+    navigation: {
+      nextEl: '.btn-swiper-next',
+      prevEl: '.btn-swiper-prev',
+    },
+  });
+
 });
 
