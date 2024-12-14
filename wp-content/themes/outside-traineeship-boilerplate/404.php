@@ -8,50 +8,44 @@
  */
 
 get_header();
+
+	$error_404 = get_field('404_error', 'option');
+
+	$error_code = $error_404['error_code'];
+	$error_message = $error_404['error_message'];
+	$error_description = $error_404['error_description'];
+	$button = $error_404['button'];
+	$button_label = $button['button_label'];
+	$page_link = $button['page_link'];
+	$image = $error_404['background_image'];
 ?>
 
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'outside-traineeship-biolerplate' ); ?></h1>
-			</header><!-- .page-header -->
+			<div class="container p-0">
+				<?php if ($image): ?>
+					<img src="<?php echo $image['url'];?>" class="error__image" alt="<?php echo $image['alt'];?>" aria-label="Error background image">
+				<?php endif; ?>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'outside-traineeship-biolerplate' ); ?></p>
+				<div class="error__content">
+					<?php if ($error_code): ?>
+						<p class="c1"><?php echo $error_code; ?></p>
+					<?php endif; ?>
 
-					<?php
-					get_search_form();
+					<?php if ($error_message): ?>
+						<h2 class="d2 pb-m"><?php echo $error_message; ?></h2>
+					<?php endif; ?>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					<?php if ($error_description): ?>
+						<p class="sh3 pb-s"><?php echo $error_description; ?></p>
+					<?php endif; ?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'outside-traineeship-biolerplate' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$outside_traineeship_biolerplate_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'outside-traineeship-biolerplate' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$outside_traineeship_biolerplate_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
+					<?php if ($button): ?>
+						<a href="<?php echo $page_link;?>" class="btn-primary text-decoration-none mx-auto"aria-label="Navigate to <?php echo $button_label; ?> page"><?php echo $button_label; ?></a>
+					<?php endif; ?>
+				</div>
+			</div>
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->

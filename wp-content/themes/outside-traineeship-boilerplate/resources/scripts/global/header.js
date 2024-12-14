@@ -1,16 +1,18 @@
-import { Offcanvas } from 'bootstrap';
+import "../../../node_modules/bootstrap/js/dist/offcanvas";
+import "bootstrap/js/dist/dropdown.js"
 
-
-const header = () => {
-    const offcanvasEl = document.querySelector('header .offcanvas');
-    console.log('I am a function');
-    if (!offcanvasEl) {
-        return;
+window.addEventListener('DOMContentLoaded', () => {
+    const header = () => {
+        const offcanvasEl = document.querySelector('#header .navbar');
+        console.log('I am a function');
+        if (!offcanvasEl) {
+            return;
+        }
+        console.log('i am running')
+        new Offcanvas(offcanvasEl);
     }
-    console.log('i am running')
-    new Offcanvas(offcanvasEl);
+    header();
+});
 
-}
-header();
 export default header;
 
