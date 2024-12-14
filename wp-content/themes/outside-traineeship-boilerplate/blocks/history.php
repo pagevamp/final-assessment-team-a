@@ -23,19 +23,15 @@
     $query = new WP_Query($args);
 
     if ($query->have_posts()): ?>
-        <div class="container me-0">
-            
-            
+        <div class="container m-0 p-0">
             <div class="swiper history-swiper">
                 <div class="swiper-wrapper">
                     <?php
                     while($query->have_posts()) :
                         $query->the_post();
-
                         $post_id = get_the_ID();
                         $image_url = get_the_post_thumbnail_url($post_id);
                         $paragraphs = get_field('history_paragraphs', $post_id);
-    
                         
                     ?>
                         <div class="history__container swiper-slide" aria-labelledby="history-heading-<?php echo $post_id; ?>">
@@ -51,18 +47,12 @@
 
                             <?php if ($paragraphs): ?>
                                 <div class="history__content">
-                                    <?php foreach ($paragraphs as $paragraph): ?>
-                                        <p class="text-neutral-600">
-                                                <?php echo $paragraph[0]['paragraph']; ?>
-                                        </p>
+                                    <?php foreach ($paragraphs['paragraphs'] as $paragraph): ?>
                                         <?php if (!empty($paragraph['paragraph'])):?>
                                             <p class="text-neutral-600">
-                                                <?php echo $paragraph[0]['paragraph']; ?>
+                                                 <?php echo $paragraph['paragraph'];?>
                                             </p>
-                                        <?php else: ?>
-                                            <p class="text-neutral-600">
-                                                Paragraph data is missing.
-                                            </p>
+                                        
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>

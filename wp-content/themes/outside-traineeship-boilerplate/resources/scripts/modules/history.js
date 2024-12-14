@@ -9,9 +9,16 @@ import 'swiper/css/pagination';
 document.addEventListener("DOMContentLoaded", () => {
   new Swiper('.history-swiper', {
     modules: [Pagination, Navigation],
+    slidesPerView: "auto",
+    spaceBetween: 24,
     pagination: {
       el: '.swiper-pagination',
       
+    },
+    breakpoints:{
+      700: {
+        spaceBetween: 75,
+      }
     },
     navigation: {
       nextEl: '.btn-swiper-next',

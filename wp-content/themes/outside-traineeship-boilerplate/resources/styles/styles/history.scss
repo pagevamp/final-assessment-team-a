@@ -1,25 +1,28 @@
 @import '../custom.scss';
 
 .history {
-
+    width:  100%;
     $self: ".history";
-
     .h2 {
         margin-bottom: 6rem;
     }
     display: flex;
+    padding-inline: 28px;
     flex-direction: column;
     .container{
-        width: 80%;
-        margin-left: 1rem;
-
+        // width: 80%;
+       
         .history-swiper{
             
             display: flex;
+            .swiper-wrapper{
+                gap: 0;
+            
             #{$self}__container{
-                padding-right: 1.5rem;
-                margin-right: 1.5rem;
+                padding-right: 24px;
+                // margin-right: 1.5rem;
                 border-right: 1px solid $neutral-100;
+                width: 282px;
                 .image-container {
                     width: 100%;
                     flex-grow: 1;
@@ -39,17 +42,18 @@
                     overflow: hidden;
                     text-overflow: ellipsis; /* Adds the ellipsis */
                 }
-                &:nth-last-child(1){
-                    border: none;
-                    padding-right: 0;
+                &:last-child{
+                    border-right: none;
+                    // padding-right: 0;
                 }
             }
+        }
             
         }
     }
     .swiper-navigation {
         margin-top: 4rem;
-        margin-left: 2rem;
+       
 
         display: flex;
         gap: 1rem;
@@ -58,9 +62,12 @@
             transform: rotate(180deg);
         }
     }
+
     @include media-breakpoint-up(sm){
+        padding-inline: 5rem;
+
         .container{
-            width: 60%;
+            width: 100%;
             .history-swiper {
                 height: 100%;
 
@@ -70,8 +77,8 @@
                     flex-direction: row;
 
                     .swiper-slide {
-                        padding-inline: 3rem;
-
+                        padding-right: 75px;
+                        margin-right: 0;
                         width: 36%;
                         height: 100%;
 
@@ -83,9 +90,6 @@
                 }
             }
     
-        }
-        .swiper-navigation {
-            margin-left: 5rem;
         }
     }
     
