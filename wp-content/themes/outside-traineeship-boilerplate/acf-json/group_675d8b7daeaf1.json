@@ -76,6 +76,7 @@
                                 "id": ""
                             },
                             "layout": "block",
+                            "parent_repeater": "field_675d8ba23ba97",
                             "sub_fields": [
                                 {
                                     "key": "field_675d8be13ba99",
@@ -144,8 +145,7 @@
                                         }
                                     ]
                                 }
-                            ],
-                            "parent_repeater": "field_675d8ba23ba97"
+                            ]
                         }
                     ]
                 }
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734183940
+    "modified": 1734187568
 }
