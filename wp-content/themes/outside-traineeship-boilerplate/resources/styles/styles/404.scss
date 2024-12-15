@@ -1,0 +1,27 @@
+@import '../custom.scss';
+
+.error-404{
+    position: relative;
+    padding: 3rem 1.75rem;
+    .container{
+        height: 80vh;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        .error__image{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .error__content{
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            .btn-primary{
+                width: 295px;
+                
+            }
+        }
+    }
+}
