@@ -11,7 +11,7 @@
 ?>
 
 <section id="history" class="history bg-texture py-xl">
-<?php if (!empty($heading)): ?>
+            <?php if (!empty($heading)): ?>
                 <h2 class="history__heading h2 text-section-title text-neutral-600"><?php echo $heading; ?></h2>
             <?php endif; ?>
     <?php
@@ -32,21 +32,25 @@
                         $post_id = get_the_ID();
                         $image_url = get_the_post_thumbnail_url($post_id);
                         $paragraphs = get_field('history_paragraphs', $post_id);
-                        
+                        $title = get_the_title();
+                        $years = get_the_terms($post_id, 'history-year');
+                        $slug = $years[0]->slug;
                     ?>
-                        <div class="history__container swiper-slide" aria-labelledby="history-heading-<?php echo $post_id; ?>">
+
+                        <div class="history__container swiper-slide" id= "history-card" aria-labelledby="history-heading-<?php echo $post_id; ?>" data-slug="<?php echo $slug; ?>">
+
                             <h2 id="history-heading-<?php echo $post_id; ?>" class="history__heading text-xl text-primary">
-                                <?php echo get_the_title(); ?>
+                                <?php echo $title; ?>
                             </h2>
                         
                             <?php if ($image_url): ?>
                                 <div class="image-container">
-                                    <img src="<?php echo $image_url; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" aria-hidden="true">
+                                    <img src="<?php echo $image_url; ?>" alt="<?php echo $title; ?>" aria-hidden="true">
                                 </div>
                             <?php endif; ?>
 
                             <?php if ($paragraphs): ?>
-                                <div class="history__content">
+                                <div class="history__content mb-s">
                                     <?php foreach ($paragraphs['paragraphs'] as $paragraph): ?>
                                         <?php if (!empty($paragraph['paragraph'])):?>
                                             <p class="text-neutral-600">
@@ -56,12 +60,11 @@
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>
-                                <a href="#" class="text-sm text-primary text-decoration-none continue-reading" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"
+                                <a href="#" class="text-sm text-primary text-decoration-none continue-reading" aria-label="Read more about <?php echo $title; ?>"
                                 data-title="<?php echo esc_attr(get_the_title()); ?>"
                                 data-slug="<?php echo get_post_field('post_name', $post_id); ?>">
                                     Continue Reading
                                 </a>
-                                
                                 
                             <?php endif; ?>
                         </div>
@@ -82,3 +85,20 @@
         <button class="btn-swiper-next btn-primary" aria-label="Next history"></button>
     </div>
 </section>
+
+<!-- <div id="history-popup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-content">
+        <button id="popup-close" class="popup-close-btn" aria-label="Close popup">&times;</button>
+        <div id="popup-body" class="popup-body">
+           
+        </div>
+    </div>
+</div> -->
+
+<dialog id="popup-dialog">
+    <p id="popup-title">
+    </p>
+    <img src="" id="popup-image" alt="">
+    <div id="popup-paragraph"></div>
+    <button id="popup-close" class="popup-close-btn" aria-label="Close popup">&times;</button>
+</dialog>
