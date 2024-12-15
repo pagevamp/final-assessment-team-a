@@ -52,3 +52,7 @@
         @include responsive-styles($properties);
     }
 }
+
+.sr-only {
+    visibility: hidden;
+}
