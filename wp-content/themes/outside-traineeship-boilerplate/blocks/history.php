@@ -87,7 +87,7 @@
     <dialog id="popup-dialog" class="p-0">
     <div class="popup">
         <img src="" id="popup-image" alt="">
-        <div class="popup-content">
+        <div class="popup-content overflow-scroll">
             <p id="popup-title" class="my-m pb-s text-xl text-primary"></p>
             <div id="popup-paragraph" ></div>
         </div>
