@@ -99,61 +99,68 @@
     
         }
     }
+}
 
+#popup-dialog{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
 
+    #popup-close {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        font-size: 2rem;
+        color: $white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    #popup-close:hover {
+        color: #000;
+    }
+    .popup-content{
+        padding: 1rem;
+    }
+    .popup{
+        #popup-image{
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    }
     
-    
-}
-
-.popup-overlay {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    z-index: 10000; /* Ensure it stays on top */
-    display: none; /* Hidden initially */
-}
-
-.popup-overlay.active {
-    display: flex; /* Show popup when active */
-}
-
-.popup-content {
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 600px;
-    max-height: 80vh; /* Prevent overflow */
-    overflow-y: auto; /* Scroll if content is long */
-    padding: 20px;
-    animation: fadeIn 0.3s ease-in-out; /* Smooth popup animation */
-}
-
-#popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: #555;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-#popup-close:hover {
-    color: #000;
-}
-
-.popup-body {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
+    @include media-breakpoint-up(sm){
+        margin-block: auto;
+        margin-inline: 5rem;
+       
+        .popup{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3%;
+            #popup-image{
+                height: 100%;
+            }
+        }
+        #popup-close{
+            color: $neutral-500;
+        }
+        .popup-content{
+            padding: 2rem;
+            max-height: 700px;
+        }
+        &::backdrop {
+            background-color: #0C131A;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        
+        .popup-content{
+            padding: 5rem 6rem;
+          
+        }
+    }
 }
 

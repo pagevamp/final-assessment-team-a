@@ -53,7 +53,7 @@
                                 <div class="history__content mb-s">
                                     <?php foreach ($paragraphs['paragraphs'] as $paragraph): ?>
                                         <?php if (!empty($paragraph['paragraph'])):?>
-                                            <p class="text-neutral-600">
+                                            <p class="text-neutral-600 text-md">
                                                  <?php echo $paragraph['paragraph'];?>
                                             </p>
                                         
@@ -84,6 +84,16 @@
         <button class="btn-swiper-prev btn-primary" aria-label="Previous history"></button>
         <button class="btn-swiper-next btn-primary" aria-label="Next history"></button>
     </div>
+    <dialog id="popup-dialog" class="p-0">
+    <div class="popup">
+        <img src="" id="popup-image" alt="">
+        <div class="popup-content">
+            <p id="popup-title" class="my-m pb-s text-xl text-primary"></p>
+            <div id="popup-paragraph" ></div>
+        </div>
+    </div>
+    <button id="popup-close" class="popup-close-btn" aria-label="Close popup">&times;</button>
+</dialog>
 </section>
 
 <!-- <div id="history-popup" class="popup-overlay" aria-hidden="true">
@@ -95,10 +105,4 @@
     </div>
 </div> -->
 
-<dialog id="popup-dialog">
-    <p id="popup-title">
-    </p>
-    <img src="" id="popup-image" alt="">
-    <div id="popup-paragraph"></div>
-    <button id="popup-close" class="popup-close-btn" aria-label="Close popup">&times;</button>
-</dialog>
+
