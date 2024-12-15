@@ -1,11 +1,11 @@
 {
     "key": "group_675c1ee8daecf",
-    "title": "Feature Projects",
+    "title": "Featured Projects",
     "fields": [
         {
             "key": "field_675c1ee8f03c1",
-            "label": "Projects",
-            "name": "projects",
+            "label": "Featured Projects",
+            "name": "featured_projects",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -19,11 +19,11 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_675c1f03f03c2",
-                    "label": "Project Details",
-                    "name": "project_details",
+                    "key": "field_675efe9c77d31",
+                    "label": "Heading",
+                    "name": "heading",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -32,114 +32,42 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_675c1f1ff03c3",
-                            "label": "Image",
-                            "name": "image",
-                            "aria-label": "",
-                            "type": "relationship",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "project"
-                            ],
-                            "post_status": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "post_type",
-                                "taxonomy"
-                            ],
-                            "return_format": "object",
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 1,
-                            "elements": "",
-                            "bidirectional": 0,
-                            "bidirectional_target": [],
-                            "parent_repeater": "field_675c1f03f03c2"
-                        },
-                        {
-                            "key": "field_675c1f2ef03c4",
-                            "label": "Heading",
-                            "name": "heading",
-                            "aria-label": "",
-                            "type": "relationship",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "project"
-                            ],
-                            "post_status": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "post_type",
-                                "taxonomy"
-                            ],
-                            "return_format": "object",
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 1,
-                            "elements": "",
-                            "bidirectional": 0,
-                            "bidirectional_target": [],
-                            "parent_repeater": "field_675c1f03f03c2"
-                        },
-                        {
-                            "key": "field_675c1f36f03c5",
-                            "label": "Type",
-                            "name": "type",
-                            "aria-label": "",
-                            "type": "relationship",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "project"
-                            ],
-                            "post_status": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "post_type",
-                                "taxonomy"
-                            ],
-                            "return_format": "object",
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 1,
-                            "elements": "",
-                            "bidirectional": 0,
-                            "bidirectional_target": [],
-                            "parent_repeater": "field_675c1f03f03c2"
-                        }
-                    ]
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_675efeaa77d32",
+                    "label": "Feature Projects Relationship",
+                    "name": "feature_projects_relationship",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "project"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search"
+                    ],
+                    "return_format": "object",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
                 }
             ]
         }
@@ -162,5 +90,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734091274
+    "modified": 1734280576
 }
