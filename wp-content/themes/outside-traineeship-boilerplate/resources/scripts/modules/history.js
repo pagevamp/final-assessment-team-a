@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const urlParams = new URL(window.location).searchParams;
       if (urlParams.get('year') === `?year=${slug}`) {
-        dialog.showModal();
+        popUp.showModal();
       }
     });
   });
