@@ -31,7 +31,7 @@
 		$emergency		= $header['emergency_contact'];
 
 		$socials		= get_field('socials', 'option');
-		$linkedin	= $socials['linkedin'];
+		$linkedin		= $socials['linkedin'];
 
 		$has_menu_items = wp_nav_menu(array('theme_location' => 'header-menu', 'echo' => false)) !== false; // check if menu is empty or not
 
