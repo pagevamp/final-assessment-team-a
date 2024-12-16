@@ -13,6 +13,7 @@ add_action('acf/init', function() {
             'vimeo_video' => 'Vimeo Video',
             'history'   => 'History',
             'recent_projects'   => "Recent Projects",
+            'projects'  => "Projects"
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
