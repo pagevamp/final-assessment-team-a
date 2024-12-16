@@ -38,7 +38,7 @@
 							<?php foreach ($content['list'] as $item): ?>
 								<?php if ($item['item']): ?>
 									<li class="text-neutral-600 sh3">
-										<a href="<?php echo $item['link'] ?? '#' ?>" class="text-neutral-600 text-decoration-none">
+										<a target="_blank" href="<?php echo $item['link'] ?? '' ?>" class="text-neutral-600 text-decoration-none">
 											<?php echo $item['item']; ?>
 										</a>
 									</li>
@@ -67,11 +67,11 @@
 			</nav>
 		<?php endif; ?>
 
-		<div class="footer__logo-container">
+		<a href="#" class="footer__logo-container">
 			<?php if (!empty($logo)): ?>
 				<img class="footer__logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 			<?php endif; ?>
-		</div>
+		</a>
 	</section>
 </footer><!-- #colophon -->
 </div><!-- #page -->
