@@ -4,7 +4,6 @@
     $self: ".gallery";
 
     width: 100%;
-
     padding: 3rem 1.75rem;
 
     @include media-breakpoint-up(sm) {
@@ -12,16 +11,57 @@
     }
 
     &__video-container {
+        position: relative;
         width: 100%;
+        padding-bottom: 56.25%; 
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transition: opacity 0.5s ease-in-out;
+        }
 
         #{$self} {
+            
+            &__controls {
+                position: absolute; 
+                top: 50%; 
+                left: 50%; 
+                transform: translate(-50%, -50%); 
+                display: flex; 
+                gap: 1rem; 
+                z-index: 10; 
+                transition: opacity 0.5s ease-in-out;
 
-            &__video {
-                width: 100%;
-                aspect-ratio: 1 / 1;
+                .btn-play-pause {
+                    background-color: $primary-red; 
+                    color: #fff;
+                    width: 4.25rem;
+                    height: 4.25rem;
+                    border-radius: 50%; 
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    padding: 1rem;
+                    cursor: pointer;
+                    font-size: 1.5rem;
 
-                @include media-breakpoint-up(sm) {
-                    aspect-ratio: 16 / 9;
+                    &:hover {
+                        background-color: $neutral-500;
+                    }
                 }
             }
         }
