@@ -11,6 +11,15 @@
             .form-control, .form-select{
                 padding-block: 14px;
             }
+
+            .form-control {
+                color: $neutral-600;
+                border-color: $neutral-600;
+            }
+
+            .btn-primary {
+                margin-top: 3rem;
+            }
         }
 
         @include media-breakpoint-up(sm) {

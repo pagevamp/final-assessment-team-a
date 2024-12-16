@@ -142,12 +142,15 @@ add_action( 'widgets_init', 'outside_traineeship_biolerplate_widgets_init' );
 function outside_traineeship_biolerplate_scripts() {
 	wp_enqueue_style('app.css', get_template_directory_uri().'/public/styles/app.css', false, null);
     wp_enqueue_script('app.js', get_template_directory_uri().'/public/scripts/app.js', ['jquery'], null, true);
-	// swiper
-	// wp_enqueue_style( 'swiper-cdn-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION );
-	// wp_enqueue_script( 'swiper-cdn-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), _S_VERSION, true );
-
-	// wp_enqueue_script('swiper.js', get_template_directory_uri().'/public/scripts/swiper.js', ['jquery'], null, true);
+	
     wp_enqueue_script('history.js', get_template_directory_uri().'/public/scripts/history.js', ['jquery'], null, true);
+
+    wp_enqueue_script('contact-section.js', get_template_directory_uri().'/public/scripts/contact-section.js', ['jquery'], null, true);
+
+	wp_localize_script('contact-section.js', 'ajax_object', array(
+		'ajax_url'	=> admin_url('admin-ajax.php'),
+	));
+
 }
 add_action('wp_enqueue_scripts', 'outside_traineeship_biolerplate_scripts');
 
@@ -245,3 +248,46 @@ function add_custom_class_to_menu_links($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_custom_class_to_menu_links', 10, 3);
+
+/*
+Wordpress AJAX for form handling
+*/
+function handle_form_submission() {
+	$first_name 	= sanitize_text_field($_POST['first_name']);
+	$last_name		= sanitize_text_field($_POST['last_name']);
+    $email			= sanitize_email($_POST['email']);
+    $phone			= $_POST['phone'];
+	$move_in_date	= $_POST['move_in_date'];
+	$unit_type		= $_POST['unit_type'];
+	$room_type		= $_POST['room_type'];
+
+	if (empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($move_in_date) || empty($unit_type) || empty($room_type)) {
+		wp_send_json_error('All fields are required');
+	}
+
+	$post_id = wp_insert_post(array(
+		'post_title'   => $first_name . ' ' . $last_name,
+        'post_type'    => 'contact-form',
+        'post_status'  => 'publish',
+	));
+
+	if (is_wp_error($post_id)) {
+        wp_send_json_error('Failed to create contact form submission.');
+    }
+
+	$group_data = array(
+        'first_name'   	=> $first_name,
+        'last_name'    	=> $last_name,
+        'email'        	=> $email,
+        'phone_number'	=> $phone,
+        'move_in_date' 	=> $move_in_date,
+        'unit_type'    	=> $unit_type,
+        'room_type'    	=> $room_type,
+    );
+
+	update_field('form_details', $group_data, $post_id);
+
+	wp_send_json_success("Thank you, $first_name $last_name! Your contact is recorded");
+}
+
+add_action('wp_ajax_submit_form_action', 'handle_form_submission');
