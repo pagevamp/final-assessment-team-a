@@ -96,9 +96,9 @@
     "location": [
         [
             {
-                "param": "comment",
+                "param": "block",
                 "operator": "==",
-                "value": "contact-form"
+                "value": "acf\/contact-section"
             }
         ]
     ],
@@ -111,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734343103
+    "modified": 1734344509
 }

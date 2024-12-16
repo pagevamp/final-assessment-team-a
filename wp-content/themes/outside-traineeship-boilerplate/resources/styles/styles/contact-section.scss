@@ -1,0 +1,31 @@
+@import '../custom.scss';
+@import '../../.././node_modules/bootstrap/scss/forms';
+.contact__section{
+    .container{
+        
+        .contact__form{
+            .form-label {
+                width: 100%;
+                margin-bottom: 24px;
+            }
+            .form-control, .form-select{
+                padding-block: 14px;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            gap: 5rem;
+            .contact__title{
+                width: 45%;
+                .subtitle{
+                    width: 55ch;
+                }
+            }
+
+            .contact__form{
+                width: 50%;
+            }
+        }
+
+    }
+}

@@ -61,6 +61,26 @@
                     "append": ""
                 },
                 {
+                    "key": "field_676009f3d66dd",
+                    "label": "Email",
+                    "name": "email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_675ff5bef893d",
                     "label": "Phone number",
                     "name": "phone_number",
@@ -107,7 +127,7 @@
                     "label": "Unit Type",
                     "name": "unit_type",
                     "aria-label": "",
-                    "type": "checkbox",
+                    "type": "radio",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -118,17 +138,16 @@
                     },
                     "choices": {
                         "lorem": "Lorem",
-                        "ipsum": "Ipsum",
-                        "dolor": "Dolor"
+                        "ipusm": "Ipsum",
+                        "dollar": "Dollar"
                     },
-                    "default_value": [],
+                    "default_value": "",
                     "return_format": "value",
-                    "allow_custom": 0,
-                    "allow_in_bindings": 0,
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 1,
                     "layout": "vertical",
-                    "toggle": 0,
-                    "save_custom": 0,
-                    "custom_choice_button_text": "Add new choice"
+                    "save_other_choice": 0
                 },
                 {
                     "key": "field_675ff6f4f8940",
@@ -178,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734342479
+    "modified": 1734347267
 }
