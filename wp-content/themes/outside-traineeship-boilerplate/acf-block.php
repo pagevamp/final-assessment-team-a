@@ -14,6 +14,7 @@ add_action('acf/init', function() {
             'history'   => 'History',
             'working_hours' => 'Working Hours',
             'capabilities' => 'Capabilities',
+            'global_contacts'   => 'Global Contacts',
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
