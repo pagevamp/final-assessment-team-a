@@ -272,19 +272,19 @@ function filter_projects()
 	$page = isset($_POST['page']) ? absint($_POST['page']) : 1;
 
 	$posts_per_page = isset($_POST['posts_per_page']) ? absint($_POST['posts_per_page']) : 3;
-	$screenWidth = isset($_POST['screen'])?absint($_POST['screen']) : 1000;
+	$screenWidth = isset($_POST['screen']) ? absint($_POST['screen']) : 1000;
 
-    // Set the variable based on screen size
-    if ($screenWidth <= 700) {
-        $variable = 3;
-    } else {
-        $variable = 16;
-    }
-	
+	// Set the variable based on screen size
+	if ($screenWidth <= 700) {
+		$variable = 3;
+	} else {
+		$variable = 16;
+	}
+
 	// Define query arguments based on filter and page
 	$args = [
 		'post_type'      => 'project',
-		'posts_per_page' => $variable, 
+		'posts_per_page' => $variable,
 		'paged'          => $page
 	];
 
@@ -292,7 +292,7 @@ function filter_projects()
 	if ($filter && $filter !== 'all') {
 		$args['tax_query'] = [
 			[
-				'taxonomy' => 'project-type', 
+				'taxonomy' => 'project-type',
 				'field'    => 'slug',
 				'terms'    => $filter,
 				'operator' => 'IN',
@@ -330,47 +330,46 @@ function filter_projects()
 		<?php
 		endwhile;
 
-		$total_pages = $query->max_num_pages;?>
+		$total_pages = $query->max_num_pages; ?>
 		<div class="pagination position-absolute d-flex">
-			<button class="prev-page <?php echo ($page > 1)? '': 'opacity-0';?>" data-page="<?php echo $page - 1; ?>" <?php echo ($page > 1)? '': 'disabled';?>>
+			<button class="prev-page <?php echo ($page > 1) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page - 1; ?>" <?php echo ($page > 1) ? '' : 'disabled'; ?>>
 				<span class="icon-chevron-down"></span>
 			</button>
 
-			<?php 
-			$visible_pages = 5; 
-			$mobile_visible_pages = 3; 
-			
+			<?php
+			$visible_pages = 5;
+			$mobile_visible_pages = 3;
+
 			if ($screenWidth <= 700) {
-				$visible_pages = $mobile_visible_pages; 
+				$visible_pages = $mobile_visible_pages;
 			}
-			
-			$start_page = max(1, $page - floor($visible_pages / 2)); 
-			$end_page = min($total_pages, $start_page + $visible_pages - 1); 
+
+			$start_page = max(1, $page - floor($visible_pages / 2));
+			$end_page = min($total_pages, $start_page + $visible_pages - 1);
 
 			// Add ellipsis if there are pages before the first visible page
-			if ($start_page > 1) :?>
+			if ($start_page > 1) : ?>
 				<button class="pagination-link text-sm border-1 border-neutral-100" data-page="1">1</button>
 				<span class="pagination-ellipsis">...</span>
-			<?php endif;?>
+			<?php endif; ?>
 
 			<?php for ($i = $start_page; $i <= $end_page; $i++): ?>
 				<button class="pagination-link text-sm border-1 border-neutral-100 <?php ($i == $page ? 'active' : '') ?>" data-page="<?php echo $i ?>"><?php echo $i ?></button>
-			<?php endfor;?>
+			<?php endfor; ?>
 
-			<?php 
+			<?php
 			// Add ellipsis if there are pages after the last visible page
 			if ($end_page < $total_pages): ?>
 				<span class="pagination-ellipsis">...</span>
 				<button class="pagination-link text-sm border-1 border-neutral-100" data-page="<?php echo $total_pages ?>"> <?php echo $total_pages ?></button>
 			<?php endif; ?>
-		
 
-			<button class="next-page <?php echo ($page < $total_pages)?'': 'opacity-0';?>" data-page="<?php echo $page + 1; ?>" <?php echo ($page < $total_pages)? '': 'disabled';?>>
+			<button class="next-page <?php echo ($page < $total_pages) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page + 1; ?>" <?php echo ($page < $total_pages) ? '' : 'disabled'; ?>>
 				<span class="icon-chevron-down"></span>
 			</button>
 		</div>
 
-		<?php wp_reset_postdata();
+<?php wp_reset_postdata();
 	else :
 		echo 'No projects found';
 	endif;
