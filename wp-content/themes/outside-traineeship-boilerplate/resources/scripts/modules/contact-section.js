@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const lastName = document.getElementById("last-name").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
-        const moveInDate = document.getElementById("move-in-date").value.trim();
+        const moveInDate = document.getElementById("move-in-date").value;
         const unitType = document.getElementById("unit-type").value;
         const roomType = document.querySelector("input[name='room-type']:checked");
 
@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (moveInDate === "") {
             moveInDateError.textContent = "Move-in date is required.";
+            document.getElementById("move-in-date").style.borderColor = "#D72027";
+            isValid = false;
+        } else if (!validateDateFormat(moveInDate)) {
+            moveInDateError.textContent = "Please enter a valid date in the format YYYY-MM-DD.";
             document.getElementById("move-in-date").style.borderColor = "#D72027";
             isValid = false;
         }
@@ -112,6 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
         function validateEmail(email) {
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailPattern.test(email);
+        }
+        function validateDateFormat(date) {
+            const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+            return datePattern.test(date);
         }
     });
 });

@@ -2,6 +2,11 @@
 
 .recent__projects {
     padding: 3rem 1.75rem;
+    margin-bottom: 7rem;
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 10rem;
+    }
     .h2 {
         margin-bottom: 5rem;
     }
@@ -49,11 +54,15 @@
             }
 
             .pagination {
-                bottom: -3.75rem;
+                bottom: -5.75rem;
                 left: 50%;
                 transform: translateX(-50%);
                 gap: 0.25rem;
                 overflow-x: auto;
+
+                @include media-breakpoint-up(sm) {
+                    bottom: -7.75rem;
+                }
 
                 .pagination-link {
                     width: 3rem;

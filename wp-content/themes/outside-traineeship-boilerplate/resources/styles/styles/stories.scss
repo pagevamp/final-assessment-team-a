@@ -3,11 +3,20 @@
 .stories{
     margin-block: 7.5rem;
     margin-inline: 1.75rem;
-    .c1{
-        margin-bottom: 1.75rem;
-    }
-    .h5{
-        margin-bottom: 3rem;
+    
+    &__content{
+        .c1{
+            margin-bottom: 1.75rem;
+        }
+        .h5{
+            margin-bottom: 3rem;
+            font-family: 'Reckless Neue Book';
+        }
+        a{
+            width: 11.25rem;
+            text-wrap: nowrap;
+        }
+    
     }
 
     @include media-breakpoint-up(sm){
@@ -15,6 +24,10 @@
         .stories__content{
             border-left: 1px solid $neutral-100;
             padding-left: 5.5rem;
+
+            a{
+                width: 15rem;
+            }
         }
     }
     @include media-breakpoint-up(md){

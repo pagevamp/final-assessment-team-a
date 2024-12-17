@@ -44,7 +44,7 @@
 					<!-- Logo Section -->
 					<?php if (!empty($logo)): ?>
 						<figure class="header__logo-container navbar-brand mb-0 pt-s">
-							<a href="#" aria-label="Homepage">
+							<a href="/" aria-label="Homepage">
 								<img class="header__logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 							</a>
 						</figure>
@@ -91,8 +91,11 @@
 							</a>
 							<?php if (!empty($emergency['heading']) || !empty($emergency['phone'])): ?>
 								<div class="header__emergency">
-									<p class="text-xsm text-neutral-600"><?php echo $emergency['heading']; ?></p>
-									<p class="text-lg"><span class="icon-phone-call" aria-hidden="true"></span> <?php echo $emergency['phone']; ?></p>
+									<p class="text-xsm text-neutral-600 text-center"><?php echo $emergency['heading']; ?></p>
+
+									<?php if (!empty($emergency['phone'])): ?>
+										<a target="_blank" href="tel:<?php echo $emergency['phone']; ?>" class="text-lg text-neutral-600 text-decoration-none"><span class="icon-phone-call"></span> <?php echo $emergency['phone']; ?></a>
+									<?php endif; ?>
 								</div>
 							<?php endif; ?>
 						</div>

@@ -1,61 +1,171 @@
 @import '../custom.scss';
 
 .history {
-
+    width:  100%;
     $self: ".history";
-
-    padding-inline: 3rem 0;
-
     .h2 {
         margin-bottom: 6rem;
     }
-
-    .historyswiper {
-        width: 100%;
-
-        .swiper-wrapper {
+    display: flex;
+    padding-left: 1.75rem;
+    flex-direction: column;
+    .container{
+        max-width: 100%;
+       
+        .history-swiper{
             display: flex;
-            gap: 2.5rem;
 
-            .swiper-slide {
+            .swiper-wrapper{
+                gap: 0;
+            
+            #{$self}__container{
+                padding-right: 1.5rem;
+                // margin-right: 1.5rem;
+                border-right: 0.0625rem solid $neutral-100;
+                width: 17.625rem;
 
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-
-                padding-bottom: 2rem;
-                // border-bottom: 1px solid $neutral-100;
+                #{$self}__heading{
+                    cursor: pointer;
+                }
 
                 .image-container {
                     width: 100%;
                     flex-grow: 1;
+                    padding-block: 1.5rem;
+                    cursor: pointer;
                     img {
                         width: 100%;
-                        aspect-ratio: 1/1;
+                        // height: 150px;
+                        aspect-ratio: 4/3;
                         object-fit: cover;
                     }
                 }
-
                 #{$self}__content{
-                    width: 100%; 
+                    width: 100%;
+                    cursor: pointer; 
                     display: -webkit-box; 
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical; /* Required for line clamping */
+                    -webkit-box-orient: vertical;
                     overflow: hidden;
-                    text-overflow: ellipsis; /* Adds the ellipsis */
+                    text-overflow: ellipsis;
+
+                    p:not(:first-child) {
+                        display: none; 
+                    }
+                }
+                &:last-child{
+                    border-right: none;
+                    // padding-right: 0;
                 }
             }
         }
-        .swiper-navigation {
-            margin-top: 4rem;
-            margin-left: 5rem;
+            
+        }
+    }
+    .swiper-navigation {
+        margin-top: 4rem;
+       
 
-            display: flex;
-            gap: 1rem;
+        display: flex;
+        gap: 1rem;
 
-            .btn-swiper-prev {
-                transform: rotate(180deg);
+        .btn-swiper-prev {
+            transform: rotate(180deg);
+        }
+    }
+
+    @include media-breakpoint-up(sm){
+        padding-left: 5rem;
+
+        .container{
+            width: 100%;
+            .history-swiper {
+                height: 100%;
+
+                .swiper-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    flex-direction: row;
+
+                    .swiper-slide {
+                        padding-right: 4.68rem;
+                        margin-right: 0;
+                        width: 36%;
+                        height: 100%;
+
+                        padding-bottom: 0;
+                        border-bottom: none;
+
+                        border-right: 1px solid $neutral-100;
+                    }
+                    #{$self}__content {
+                        -webkit-line-clamp: 3;
+                    }
+                }
             }
+    
+        }
+    }
+}
+
+#popup-dialog{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+
+    #popup-close {
+        position: absolute;
+        top: 0.625rem;
+        right: 1.875rem;
+        font-size: 2rem;
+        color: $white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    #popup-close:hover {
+        color: #000;
+    }
+    .popup-content{
+        padding: 1rem;
+    }
+    .popup{
+        #popup-image{
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    }
+    
+    @include media-breakpoint-up(sm){
+        margin-block: auto;
+        margin-inline: 5rem;
+       
+        .popup{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3%;
+            #popup-image{
+                height: 100%;
+            }
+        }
+        #popup-close{
+            color: $neutral-500;
+        }
+        .popup-content{
+            padding: 2rem;
+            max-height: 43.75rem;
+        }
+        &::backdrop {
+            background-color: #0C131A;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        
+        .popup-content{
+            padding: 5rem 6rem;
+          
         }
     }
 }

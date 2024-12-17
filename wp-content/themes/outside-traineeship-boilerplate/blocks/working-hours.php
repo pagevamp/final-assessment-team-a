@@ -1,11 +1,11 @@
 <?php
-$working_hours = get_field('working_hours');
-if (!empty($working_hours)):
-    $heading = $working_hours['heading'];
-    $details = $working_hours['details'];
+    $working_hours = get_field('working_hours');
+    if(!empty($working_hours)):
+        $heading = $working_hours['heading'];
+        $details = $working_hours['details'];
 ?>
 
-    <section id="working-hours" class="working-hours container" aria-labelledby="working-hours-heading">
+        <section id="working-hours" class="working-hours container" aria-labelledby="working-hours-heading">
         <?php if (!empty($heading)): ?>
             <h2 id="working-hours-heading" class="text-section-title h2">
                 <?php echo esc_html($heading); ?>
