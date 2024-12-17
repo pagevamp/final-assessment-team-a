@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(form);
 
         // Collect form field values
-        const firstName = document.getElementById("first_name").value.trim();
-        const lastName = document.getElementById("last_name").value.trim();
+        const firstName = document.getElementById("first-name").value.trim();
+        const lastName = document.getElementById("last-name").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
-        const moveInDate = document.getElementById("move_in_date").value.trim();
-        const unitType = document.getElementById("unit_type").value;
-        const roomType = document.querySelector("input[name='room_type']:checked");
+        const moveInDate = document.getElementById("move-in-date").value.trim();
+        const unitType = document.getElementById("unit-type").value;
+        const roomType = document.querySelector("input[name='room-type']:checked");
 
         // Error message spans
         const firstNameError = document.getElementById("first-name-error");
@@ -38,31 +38,37 @@ document.addEventListener("DOMContentLoaded", () => {
         // Validation rules
         if (firstName === "") {
             firstNameError.textContent = "First name is required.";
+            document.getElementById("first-name").style.borderColor = "#D72027";
             isValid = false;
         }
 
         if (lastName === "") {
             lastNameError.textContent = "Last name is required.";
+            document.getElementById("last-name").style.borderColor = "#D72027";
             isValid = false;
         }
 
         if (email === "" || !validateEmail(email)) {
             emailError.textContent = "Please enter a valid email address.";
+            document.getElementById("email").style.borderColor = "#D72027";
             isValid = false;
         }
 
         if (phone === "") {
             phoneError.textContent = "Phone number is required.";
+            document.getElementById("phone").style.borderColor = "#D72027";
             isValid = false;
         }
 
         if (moveInDate === "") {
             moveInDateError.textContent = "Move-in date is required.";
+            document.getElementById("move-in-date").style.borderColor = "#D72027";
             isValid = false;
         }
 
         if (unitType === "") {
             unitTypeError.textContent = "Please select a unit type.";
+            document.getElementById("unit-type").style.borderColor = "#D72027";
             isValid = false;
         }
 
@@ -94,6 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".error-message").forEach(span => {
                 span.textContent = "";
             });
+            document.getElementById("first-name").style.borderColor = "#111111";
+            document.getElementById("last-name").style.borderColor = "#111111";
+            document.getElementById("email").style.borderColor = "#111111";
+            document.getElementById("number").style.borderColor = "#111111";
+            document.getElementById("move-in-date").style.borderColor = "#111111";
+            document.getElementById("unit-type").style.borderColor = "#111111";
         }
 
         // Helper function to validate email
