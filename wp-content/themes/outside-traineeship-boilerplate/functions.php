@@ -148,6 +148,11 @@ function outside_traineeship_biolerplate_scripts() {
 
 	// wp_enqueue_script('swiper.js', get_template_directory_uri().'/public/scripts/swiper.js', ['jquery'], null, true);
     wp_enqueue_script('history.js', get_template_directory_uri().'/public/scripts/history.js', ['jquery'], null, true);
+	wp_enqueue_script('projects.js', get_template_directory_uri().'/public/scripts/projects.js', ['jquery'], null, true);
+
+	wp_localize_script('projects.js', 'ajax_object', array(
+		'ajax_url'	=> admin_url('admin-ajax.php'),
+	));
 }
 add_action('wp_enqueue_scripts', 'outside_traineeship_biolerplate_scripts');
 
@@ -245,3 +250,72 @@ function add_custom_class_to_menu_links($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_custom_class_to_menu_links', 10, 3);
+
+
+function filter_projects() {
+	// Check nonce for security if needed (optional)
+    // if( !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'filter_nonce') )
+    //    die('Permission denied');
+	// var_dump($_POST['filter']);
+
+    // Get filter and page from POST data
+    $filter = isset($_POST['filter']) ? sanitize_text_field($_POST['filter']) : 'all';
+    $page = isset($_POST['page']) ? absint($_POST['page']) : 1;
+
+    // Define query arguments based on filter and page
+    $args = [
+        'post_type'      => 'project',
+        'posts_per_page' => 16, // Set posts per page
+        'paged'          => $page
+    ];
+
+    // Apply taxonomy filter if filter is set and not 'all'
+    if ($filter && $filter !== 'all') {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'project-type', // Replace with your taxonomy slug
+                'field'    => 'slug',
+                'terms'    => $filter,
+                'operator' => 'IN',
+            ]
+        ];
+    }
+
+    // Run WP_Query
+    $query = new WP_Query($args);
+
+	
+    // Return the projects
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+            $heading = get_the_title();
+            $post_id = get_the_ID();
+            $image_url = get_the_post_thumbnail_url($post_id);
+            $categories = get_the_terms($post_id, 'project-type');
+            ?>
+            <div class="projects__container w-100" role="group">
+                <?php if (!empty($categories) && !is_wp_error($categories)): ?>
+                    <p class="projects__heading c3 text-primary mb-xs"><?php echo esc_html($categories[0]->name); ?></p>
+                <?php endif; ?>
+
+                <?php if (!empty($heading)): ?>
+                    <p class="projects__category sh2 text-neutral-600 mb-l"><?php echo esc_html($heading); ?></p>
+                <?php endif; ?>
+
+                <?php if (!empty($image_url)): ?>
+                    <div class="image-container">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($heading); ?>">
+                    </div>
+                <?php endif; ?>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo 'No projects found';
+    endif;
+
+    wp_die(); 
+}
+add_action('wp_ajax_filter_action', 'filter_projects');
+add_action('wp_ajax_nopriv_filter_action', 'filter_projects');

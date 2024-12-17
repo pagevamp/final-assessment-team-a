@@ -25,9 +25,10 @@
     
             <?php
             $args = [
-                'post_type'         => 'project',
-                'posts_per_page'    => -1,
-                'post__in'          => $post_ids,
+                'post_type'      => 'project',
+                'posts_per_page' => 16, // Set posts per page
+                'post__in'       => $post_ids,
+                'paged'          => 1 
             ];
             $query = new WP_Query($args);
 
@@ -71,19 +72,19 @@
             
 
 
-            <div id="project-swiper" class="swiper project-swiper" role="region" aria-label="Featured Projects Carousel">
-                <div class="swiper-wrapper align-items-stretch w-100">
-            <?php if ($query->have_posts()):
-                while ($query->have_posts()) :
-                    $query->the_post();
-                    $heading = get_the_title();
-                    $post_id = get_the_ID();
-                    $image_url = get_the_post_thumbnail_url($post_id);
-                    $categories = get_the_terms($post_id, 'project-type');
-            ?>
+            <div id="project-lists" class="project-lists" role="region" aria-label="Recent Projects Carousel">
+                <div class="project-wrapper align-items-stretch w-100">
+                    <?php if ($query->have_posts()):
+                        while ($query->have_posts()) :
+                            $query->the_post();
+                            $heading = get_the_title();
+                            $post_id = get_the_ID();
+                            $image_url = get_the_post_thumbnail_url($post_id);
+                            $categories = get_the_terms($post_id, 'project-type');
+                    ?>
 
 
-                    <div class="projects__container swiper-slide w-100" role="group">
+                    <div class="projects__container w-100" role="group">
                         <?php if (!empty($categories) && !is_wp_error($categories)): ?>
                             <p class="projects__heading c3 text-primary mb-xs"><?php echo esc_html($categories[0]->name); ?></p>
                         <?php endif; ?>
@@ -108,11 +109,16 @@
             endif;
             ?>
         </div>
-        <div class="swiper-navigation">
-            <button class="btn-primary-prev btn-primary" aria-label="Previous project">
-            </button>
-            <button class="btn-primary-next btn-primary" aria-label="Next project">
-            </button>
-        </div>
+        
     </div>
+    <!-- <div id="pagination" class="pagination">
+        /*<?php
+        echo paginate_links([
+            'total'   => $query->max_num_pages,
+            'current' => $paged,
+            'prev_text' => __('« Previous'),
+            'next_text' => __('Next »'),
+        ]);
+        ?>*/
+    </div> -->
 </section>
