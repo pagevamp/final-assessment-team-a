@@ -7,8 +7,8 @@
     }
 
     .project-filter{
-        border-block: 1px solid $neutral-100;
-        padding-block: 17px;
+        border-block: 0.0625rem solid $neutral-100;
+        padding-block: 1.0625rem;
         margin-bottom: 30px;
         width: 100%;
         .filter-btn{
@@ -53,14 +53,18 @@
                 left: 50%;
                 transform: translateX(-50%);
                 gap: 0.25rem;
+                overflow-x: auto;
 
                 .pagination-link {
                     width: 3rem;
                     height: 3rem;
                     background: transparent;
+                    border-radius: 0.25rem;  
+                    border: 0.0625rem solid $neutral-100;
                 }
 
-                .prev-page, .next-page {
+                .prev-page, 
+                .next-page {
                     background: transparent;
                     border: none;
                     font-size: 1.125rem;
@@ -68,6 +72,9 @@
                     height: 3rem;
                     display: grid;
                     place-items: center;
+                    span{
+                        color: $neutral-600;
+                    }
                 }
 
                 .prev-page {
@@ -78,12 +85,13 @@
                 }
             }
         }
+        
     }
     @include media-breakpoint-up(sm){
         padding: 5rem;
         .project-filter{
             .filter-buttons{
-                gap: 32px;
+                gap: 2rem;
             }
         }
         .project-lists{
@@ -92,10 +100,13 @@
                 grid-template-columns: repeat(2, 1fr);
 
                 .projects__container{
-
+                    gap: 1.5rem;
                     .projects__heading{
-                        margin-top: 24px;
-                        order: -1;
+                        // margin-top: 24px;
+                        order: 1;
+                    }
+                    .projects__category{
+                        margin-top: auto;
                     }
                     .image-container{
                         margin-top: 0;
