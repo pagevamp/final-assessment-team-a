@@ -1,4 +1,4 @@
-import { Offcanvas } from "../../../node_modules/bootstrap/js/dist/offcanvas";
+import "../../../node_modules/bootstrap/js/dist/offcanvas";
 import "bootstrap/js/dist/dropdown.js"
 
 window.addEventListener('DOMContentLoaded', () => {
