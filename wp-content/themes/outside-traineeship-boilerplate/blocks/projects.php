@@ -8,6 +8,7 @@
 
     foreach ($relationship_posts as $relationship_post) {
         $post_ids[] = $relationship_post->ID;
+        print_r($post_ids);
     }
 ?>
 
@@ -24,18 +25,19 @@
 
     
             <?php
+            $paged = isset($_POST['page']) ? absint($_POST['page']) : 1;
             $args = [
                 'post_type'      => 'project',
                 'posts_per_page' => 16, // Set posts per page
                 'post__in'       => $post_ids,
-                'paged'          => 1 
+                'paged'          => $paged,
             ];
             $query = new WP_Query($args);
 
            if ($filter): ?>
                 <div id="project-filter" class="project-filter mx-auto">
                     <!-- Buttons for Desktop View -->
-                    <div class="filter-buttons w-100 d-none d-sm-flex justify-content-center">
+                    <div class="filter-buttons w-100 d-none d-md-flex justify-content-center">
                         <button class="filter-btn text-sm text-neutral-600" data-filter="all">All Projects</button>
                         <?php
                         // Get all terms from the taxonomy
@@ -54,7 +56,7 @@
                         endif; ?>
                     </div>
             
-                    <div class="filter-dropdown d-sm-none d-flex justify-content-between align-items-center">
+                    <div class="filter-dropdown d-md-none d-flex justify-content-between align-items-center">
                         <p class="filter-by text-md m-0">Filter by:</p>
                         <select name="filter__categories" id="filter__categories">
                             <option value="all">All Projects</option>
@@ -111,14 +113,16 @@
         </div>
         
     </div>
-    <!-- <div id="pagination" class="pagination">
-        /*<?php
-        echo paginate_links([
-            'total'   => $query->max_num_pages,
-            'current' => $paged,
-            'prev_text' => __('« Previous'),
-            'next_text' => __('Next »'),
-        ]);
-        ?>*/
-    </div> -->
+    <div id="pagination" class="pagination">
+    <?php
+    echo paginate_links([
+        'total'   => $query->max_num_pages,
+        'current' => $paged,
+        'prev_text' => __('« Previous'),
+        'next_text' => __('Next »'),
+        'format' => '?paged=%#%',
+        'add_args' => false, // Ensure clean URLs
+    ]);
+    ?>
+</div>
 </section>

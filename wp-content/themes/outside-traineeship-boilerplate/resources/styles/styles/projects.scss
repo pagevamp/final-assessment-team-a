@@ -65,10 +65,15 @@
 
                     .projects__heading{
                         margin-top: 24px;
+                        order: -1;
                     }
                     .image-container{
                         margin-top: 0;
-                        order: -1;
+                        order: -2;
+
+                        // @include media-breakpoint-up(md) {
+                        //     order: 1;
+                        // }
                     }
                 }
             }
