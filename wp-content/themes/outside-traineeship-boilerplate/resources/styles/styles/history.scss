@@ -7,26 +7,27 @@
         margin-bottom: 6rem;
     }
     display: flex;
-    padding-left: 28px;
+    padding-left: 1.75rem;
     flex-direction: column;
     .container{
         // width: 80%;
        
         .history-swiper{
-            
             display: flex;
+
             .swiper-wrapper{
                 gap: 0;
             
             #{$self}__container{
-                padding-right: 24px;
+                padding-right: 1.5rem;
                 // margin-right: 1.5rem;
-                border-right: 1px solid $neutral-100;
-                width: 282px;
+                border-right: 0.0625rem solid $neutral-100;
+                width: 17.625rem;
+
                 #{$self}__heading{
                     cursor: pointer;
-
                 }
+
                 .image-container {
                     width: 100%;
                     flex-grow: 1;
@@ -46,10 +47,9 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    /* Default: show only 1 paragraph */
-                    // -webkit-line-clamp: 3;
+
                     p:not(:first-child) {
-                        display: none; /* Hide all paragraphs except the first */
+                        display: none; 
                     }
                 }
                 &:last-child{
@@ -87,7 +87,7 @@
                     flex-direction: row;
 
                     .swiper-slide {
-                        padding-right: 75px;
+                        padding-right: 4.68rem;
                         margin-right: 0;
                         width: 36%;
                         height: 100%;
@@ -114,8 +114,8 @@
 
     #popup-close {
         position: absolute;
-        top: 10px;
-        right: 30px;
+        top: 0.625rem;
+        right: 1.875rem;
         font-size: 2rem;
         color: $white;
         background: none;
@@ -155,7 +155,7 @@
         }
         .popup-content{
             padding: 2rem;
-            max-height: 700px;
+            max-height: 43.75rem;
         }
         &::backdrop {
             background-color: #0C131A;
