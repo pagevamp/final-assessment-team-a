@@ -9,7 +9,7 @@ add_action('acf/init', function() {
             'featured_projects' => 'Featured Projects',
             'our_partners' => 'Our Partners',
             'features'  => 'Features',
-            'leadership' => 'Leadership',
+            'our_leadership' => 'Our Leadership',
             'vimeo_video' => 'Vimeo Video',
             'history'   => 'History',
             'working_hours' => 'Working Hours',

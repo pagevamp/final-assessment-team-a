@@ -27,6 +27,6 @@ const swiper = new Swiper(".testimonialswiper", {
     }
     
 });
+// Updating te HTML
 const totalSlides = swiper.slides.length;
-// Update the HTML
 document.getElementById('right-number').textContent = '0'+ totalSlides;
