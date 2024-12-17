@@ -47,6 +47,36 @@
                     }
                 }
             }
+
+            .pagination {
+                bottom: -3.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+                gap: 0.25rem;
+
+                .pagination-link {
+                    width: 3rem;
+                    height: 3rem;
+                    background: transparent;
+                }
+
+                .prev-page, .next-page {
+                    background: transparent;
+                    border: none;
+                    font-size: 1.125rem;
+                    width: 3rem;
+                    height: 3rem;
+                    display: grid;
+                    place-items: center;
+                }
+
+                .prev-page {
+                    transform: rotate(90deg);
+                }
+                .next-page {
+                    transform: rotate(-90deg);
+                }
+            }
         }
     }
     @include media-breakpoint-up(sm){

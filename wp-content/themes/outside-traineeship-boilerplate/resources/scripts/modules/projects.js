@@ -4,16 +4,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectListContainer = document.querySelector(".project-wrapper");
     const paginationContainer = document.getElementById("pagination");
 
+    let currentFilter = getUrlParameter('project-type') || 'all'; // Track the active filter
+    let currentPage = parseInt(getUrlParameter('page')) || 1; // Track the active page
+
+    // Function to load filtered projects
     function loadFilteredProjects(filter, page) {
+        currentFilter = filter || 'all';
+        currentPage = page || 1;
+
         const data = new FormData();
         data.append('action', 'filter_action');
-        data.append('filter', filter || 'all'); // Default to 'all' if no filter is provided
-        data.append('page', page || 1); // Default to page 1 if no page is provided
+        data.append('filter', currentFilter);
+        data.append('page', currentPage);
 
-        // Update the URL with the selected filter and page
-        updateUrlSlug(filter, page);
+        // Update the URL slug to reflect filter and page
+        updateUrlSlug(currentFilter, currentPage);
 
-        // Make the fetch request to WordPress AJAX handler
+        // Fetch the filtered projects
         fetch(ajax_object.ajax_url, {
             method: 'POST',
             body: data,
@@ -28,45 +35,59 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error fetching filtered projects:', error));
     }
 
-    function updateUrlSlug(filter, page) {
-        const newUrl = `${window.location.origin}${window.location.pathname}?project-type=${filter}&page=${page}`;
-        history.pushState({ filter, page }, '', newUrl);
+    // Function to update the URL
+    function updateUrlSlug(filter) {
+        const newUrl = `${window.location.origin}${window.location.pathname}?project-type=${filter}`;
+        history.pushState({ filter }, '', newUrl);
     }
 
+    // Function to get URL parameters
     function getUrlParameter(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
     }
 
-    const initialFilter = getUrlParameter('project-type') || 'all';
-    const initialPage = parseInt(getUrlParameter('page')) || 1;
-
-    loadFilteredProjects(initialFilter, initialPage);
-
+    // Initialize filter dropdown
     if (filterDropdown) {
         filterDropdown.addEventListener("change", function () {
             const filter = this.value;
-            loadFilteredProjects(filter, 1);
+            loadFilteredProjects(filter, currentPage);
         });
     }
 
+    // Initialize filter buttons
     filterButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
             const filter = e.currentTarget.getAttribute('data-filter');
-            loadFilteredProjects(filter, 1);
+            loadFilteredProjects(filter, currentPage);
         });
     });
 
+    // Initialize pagination click listeners
     function initPaginationClick() {
-        const paginationLinks = document.querySelectorAll("#pagination a");
+        const paginationLinks = document.querySelectorAll(".pagination .pagination-link");
         paginationLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                const page = new URL(link.href).searchParams.get('paged');
-                loadFilteredProjects(initialFilter, page);
-            });
+
+            link.addEventListener("click", () => {
+                let page = link.getAttribute('data-page');
+                if (page) {
+                    loadFilteredProjects(currentFilter, page);
+                }
+            })
         });
+
+        const prevPage = document.querySelector(".pagination .prev-page");
+        prevPage.addEventListener("click", () => {
+            let page = ((currentPage - 1) < 1) ? 1 : (currentPage - 1);
+            loadFilteredProjects(currentFilter, page)
+        })
+        const nextPage = document.querySelector(".pagination .next-page");
+        nextPage.addEventListener("click", () => {
+            let page = currentPage + 1;
+            loadFilteredProjects(currentFilter, page)
+        })
     }
 
-    initPaginationClick();
+    // Initial load based on URL parameters
+    loadFilteredProjects(currentFilter, currentPage);
 });
