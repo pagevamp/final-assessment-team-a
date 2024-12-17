@@ -43,11 +43,11 @@
 				<div class="container-fluid">
 					<!-- Logo Section -->
 					<?php if (!empty($logo)): ?>
-						<div class="header__logo-container navbar-brand">
+						<figure class="header__logo-container navbar-brand">
 							<a href="#" aria-label="Homepage">
 								<img class="header__logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 							</a>
-						</div>
+						</figure>
 					<?php endif; ?>
 
 					<!-- Toggle Button for Offcanvas Menu -->
