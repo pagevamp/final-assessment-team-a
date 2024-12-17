@@ -20,12 +20,10 @@
 
     &__container {
         display: grid;
-
         $columns: 2;
         grid-template-columns: repeat($columns, 1fr);
 
         #{$self} {
-
             &__image-container {
                 display: grid;
                 place-items: center;
@@ -66,11 +64,9 @@
             grid-template-columns: repeat($columns, 1fr);
 
             #{$self} {
-
                 &__image-container {
                     box-sizing: border-box;
                     $columns: 3;
-                    @include edge-row-selector($columns);
                 }
             }
         }
@@ -90,10 +86,8 @@
             grid-template-columns: repeat($columns, 1fr);
 
             #{$self} {
-
                 &__image-container {
                     $columns: 4;
-                    @include edge-row-selector($columns);
                 }
             }
         }
