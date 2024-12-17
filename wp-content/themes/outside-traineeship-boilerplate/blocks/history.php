@@ -81,11 +81,11 @@
         endif;
         ?>
     
-            <div class="swiper-navigation">
-            <button class="btn-swiper-prev btn-primary" aria-label="Previous history"></button>
-            <button class="btn-swiper-next btn-primary" aria-label="Next history"></button>
+            <div class="swiper-navigation" aria-label="History carousel navigation">
+                <button class="btn-swiper-prev btn-primary" aria-label="Previous history"></button>
+                <button class="btn-swiper-next btn-primary" aria-label="Next history"></button>
             </div>
-            <dialog id="popup-dialog" class="p-0">
+            <dialog id="popup-dialog" class="p-0" aria-labelledby="popup-title">
                 <div class="popup">
                     <img src="" id="popup-image" alt="">
                     <div class="popup-content overflow-scroll">
