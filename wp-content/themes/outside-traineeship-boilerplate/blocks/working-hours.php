@@ -18,7 +18,7 @@ $details = $working_hours['details'];
                 <div class="working-hours__section d-flex flex-column g-m g-sm-s mx-auto" role="listitem" tabindex="0">
                     <?php if (!empty($detail['sub_heading'])): ?>
                         <p class="c3 text-primary">
-                            <span class="sr-only">Subheading:</span> <?php echo esc_html($detail['sub_heading']); ?>
+                            <?php echo esc_html($detail['sub_heading']); ?>
                         </p>
                     <?php endif; ?>
 
@@ -26,7 +26,7 @@ $details = $working_hours['details'];
                         <div class="description-container">
                             <?php foreach ($detail['descriptions'] as $description): ?>
                                 <p class="sh3 text-neutral-600">
-                                    <span class="sr-only">Description:</span> <?php echo esc_html($description['description']); ?>
+                                    <?php echo esc_html($description['description']); ?>
                                 </p>
                             <?php endforeach; ?>
                         </div>
@@ -36,7 +36,7 @@ $details = $working_hours['details'];
                         <div class="information-container">
                             <?php foreach ($detail['information'] as $information): ?>
                                 <p class="text-sm text-neutral-500">
-                                    <span class="sr-only">Additional Information:</span> <?php echo esc_html($information['paragraph']); ?>
+                                    <?php echo esc_html($information['paragraph']); ?>
                                 </p>
                             <?php endforeach; ?>
                         </div>
