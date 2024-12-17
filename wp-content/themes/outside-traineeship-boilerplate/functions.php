@@ -261,9 +261,9 @@ function handle_form_submission() {
 	$unit_type		= $_POST['unit_type'];
 	$room_type		= $_POST['room_type'];
 
-	if (empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($move_in_date) || empty($unit_type) || empty($room_type)) {
-		wp_send_json_error('All fields are required');
-	}
+	// if (empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($move_in_date) || empty($unit_type) || empty($room_type)) {
+	// 	wp_send_json_error('All fields are required');
+	// }
 
 	$post_id = wp_insert_post(array(
 		'post_title'   => $first_name . ' ' . $last_name,
@@ -287,7 +287,29 @@ function handle_form_submission() {
 
 	update_field('form_details', $group_data, $post_id);
 
+	$to      = $email; // Send the email to the submitted email address
+    $subject = 'Thank You for Your Submission';
+    $message = "Dear $first_name $last_name,\n\n";
+    $message .= "Thank you for your submission. Here are the details you provided:\n\n";
+    $message .= "First Name: $first_name\n";
+    $message .= "Last Name: $last_name\n";
+    $message .= "Phone: $phone\n";
+    $message .= "Move-In Date: $move_in_date\n";
+    $message .= "Unit Type: $unit_type\n";
+    $message .= "Room Type: $room_type\n\n";
+    $message .= "We will get back to you shortly.\n\n";
+
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+
+    // Send the email
+    $mail_sent = wp_mail($to, $subject, $message, $headers);
+
+    if (!$mail_sent) {
+        wp_send_json_error('Failed to send email. Please try again later.');
+    }
+
 	wp_send_json_success("Thank you, $first_name $last_name! Your contact is recorded");
 }
 
 add_action('wp_ajax_submit_form_action', 'handle_form_submission');
+add_action('wp_ajax_nopriv_submit_form_action', 'handle_form_submission');

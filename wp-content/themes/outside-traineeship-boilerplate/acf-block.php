@@ -50,7 +50,7 @@ add_action('acf/init', function() {
                             wp_enqueue_style($fileName.'.css', $cssFilePathDir);
                         }
 
-                        if ( file_exists( $jsFilePath ) ) {
+                        if ( file_exists( $jsFilePath ) && ($fileName != 'contact-section')  ) {
                             wp_enqueue_script( $fileName.'js', $jsFilePathDir, array('jquery'), '', true );
                         }
                     }

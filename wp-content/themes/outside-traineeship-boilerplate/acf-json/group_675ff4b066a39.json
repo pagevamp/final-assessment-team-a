@@ -138,7 +138,7 @@
                     },
                     "choices": {
                         "lorem": "Lorem",
-                        "ipusm": "Ipsum",
+                        "ipsum": "Ipsum",
                         "dollar": "Dollar"
                     },
                     "default_value": "",
@@ -197,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734347267
+    "modified": 1734414992
 }

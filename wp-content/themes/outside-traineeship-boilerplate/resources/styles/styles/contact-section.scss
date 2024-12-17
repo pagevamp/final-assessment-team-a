@@ -10,15 +10,46 @@
             }
             .form-control, .form-select{
                 padding-block: 14px;
-            }
-
-            .form-control {
                 color: $neutral-600;
                 border-color: $neutral-600;
             }
 
             .btn-primary {
                 margin-top: 3rem;
+            }
+
+            .form-check-input:checked {
+                background-color: $neutral-600;
+                border-color: $neutral-600;
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+            
+            /* Style for the placeholder text */
+            #move_in_date_placeholder {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                color: gray;
+                pointer-events: none;
+                transition: 0.2s ease;
+            }
+            
+            /* Hide the placeholder text when the input is focused or has a value */
+            input[type="date"]:focus + #move_in_date_placeholder,
+            input[type="date"]:not(:placeholder-shown) + #move_in_date_placeholder {
+                display: none;
+            }
+            
+            /* Optional: Add padding to the input field to make space for the placeholder */
+            input[type="date"] {
+                padding-left: 10px;
             }
         }
 
