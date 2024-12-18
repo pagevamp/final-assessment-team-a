@@ -6,6 +6,11 @@
 
     padding: 3rem 1.75rem;
 
+    &__image-container {
+        width: 100vw;
+        height: 280px;
+    }
+
     .h2 {
         margin-bottom: clamp(5.5rem, 10vw, 7rem);
     }
