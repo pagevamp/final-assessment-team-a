@@ -94,7 +94,7 @@ if (!empty($projects)):
                 ?>
 
 
-                        <div class="projects__container w-100" role="group">
+                        <a href="/project" class="projects__container w-100 text-decoration-none" role="group">
                             <?php if (!empty($categories) && !is_wp_error($categories)): ?>
                                 <p class="projects__heading c3 text-primary mb-sm-0"><?php echo esc_html($categories[0]->name); ?></p>
                             <?php endif; ?>
@@ -110,49 +110,47 @@ if (!empty($projects)):
                                     <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($heading); ?>">
                                 </div>
                             <?php endif; ?>
-                        </div>
+                         </a>
                     <?php
                     endwhile;
 
-                    $total_pages = $query->max_num_pages; ?>
-                    <div class="pagination position-absolute d-flex">
-                        <button class="prev-page <?php echo ($page > 1) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page - 1; ?>" <?php echo ($page > 1) ? '' : 'disabled'; ?>>
-                            <span class="icon-chevron-down"></span>
-                        </button>
+                    $total_pages = $query->max_num_pages; 
+                    if ($total_pages != 1): ?>
+                        <div class="pagination position-absolute d-flex">
+                            <button class="prev-page <?php echo ($page > 1) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page - 1; ?>" <?php echo ($page > 1) ? '' : 'disabled'; ?>>
+                                <span class="icon-chevron-down"></span>
+                            </button>
 
-                        <?php
-                        $visible_pages = 5;
-                        $mobile_visible_pages = 3;
+                            <?php
+                            $visible_pages = 5;
+                            $mobile_visible_pages = 3;
 
-                        if ($screenWidth <= 700) {
-                            $visible_pages = $mobile_visible_pages;
-                        }
+                            if ($screenWidth <= 700) {
+                                $visible_pages = $mobile_visible_pages;
+                            }
 
-                        $start_page = max(1, $page - floor($visible_pages / 2));
-                        $end_page = min($total_pages, $start_page + $visible_pages - 1);
+                            $start_page = max(1, $page - floor($visible_pages / 2));
+                            $end_page = min($total_pages, $start_page + $visible_pages - 1);
 
-                        // Add ellipsis if there are pages before the first visible page
-                        if ($start_page > 1) : ?>
-                            <button class="pagination-link text-sm border-1 border-neutral-100" data-page="1">1</button>
-                            <span class="pagination-ellipsis">...</span>
-                        <?php endif; ?>
+                            if ($start_page > 1): ?>
+                                <button class="pagination-link text-sm border-1 border-neutral-100" data-page="1">1</button>
+                                <span class="pagination-ellipsis">...</span>
+                            <?php endif; ?>
 
-                        <?php for ($i = $start_page; $i <= $end_page; $i++): ?>
-                            <button class="pagination-link text-sm border-1 border-neutral-100 <?php ($i == $page ? 'active' : '') ?>" data-page="<?php echo $i ?>"><?php echo $i ?></button>
-                        <?php endfor; ?>
+                            <?php for ($i = $start_page; $i <= $end_page; $i++): ?>
+                                <button class="pagination-link text-sm border-1 border-neutral-100 <?php echo ($i == $page ? 'active' : ''); ?>" data-page="<?php echo $i; ?>"><?php echo $i; ?></button>
+                            <?php endfor; ?>
 
-                        <?php
-                        // Add ellipsis if there are pages after the last visible page
-                        if ($end_page < $total_pages): ?>
-                            <span class="pagination-ellipsis">...</span>
-                            <button class="pagination-link text-sm border-1 border-neutral-100" data-page="<?php echo $total_pages ?>"> <?php echo $total_pages ?></button>
-                        <?php endif; ?>
+                            <?php if ($end_page < $total_pages): ?>
+                                <span class="pagination-ellipsis">...</span>
+                                <button class="pagination-link text-sm border-1 border-neutral-100" data-page="<?php echo $total_pages; ?>"> <?php echo $total_pages; ?></button>
+                            <?php endif; ?>
 
-
-                        <button class="next-page <?php echo ($page < $total_pages) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page + 1; ?>" <?php echo ($page < $total_pages) ? '' : 'disabled'; ?>>
-                            <span class="icon-chevron-down"></span>
-                        </button>
-                    </div>
+                            <button class="next-page <?php echo ($page < $total_pages) ? '' : 'opacity-0'; ?>" data-page="<?php echo $page + 1; ?>" <?php echo ($page < $total_pages) ? '' : 'disabled'; ?>>
+                                <span class="icon-chevron-down"></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
 
                 <?php wp_reset_postdata();
                 else :
