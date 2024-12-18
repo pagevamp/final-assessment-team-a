@@ -12,14 +12,8 @@ add_action('acf/init', function() {
             'our_leadership' => 'Our Leadership',
             'vimeo_video' => 'Vimeo Video',
             'history'   => 'History',
-<<<<<<< HEAD
-            'working_hours' => 'Working Hours',
-            'capabilities' => 'Capabilities',
-            'contact_section' => 'Contact Section',
-=======
             'recent_projects'   => "Recent Projects",
             'projects'  => "Projects"
->>>>>>> PR2-WTFA-56
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
