@@ -108,7 +108,11 @@
                     "label": "Move In Date",
                     "name": "move_in_date",
                     "aria-label": "",
+<<<<<<< HEAD
                     "type": "date_picker",
+=======
+                    "type": "text",
+>>>>>>> dev
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -117,10 +121,19 @@
                         "class": "",
                         "id": ""
                     },
+<<<<<<< HEAD
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
                     "first_day": 1,
                     "allow_in_bindings": 0
+=======
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+>>>>>>> dev
                 },
                 {
                     "key": "field_675ff61df893f",
@@ -197,5 +210,9 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
+<<<<<<< HEAD
     "modified": 1734414992
+=======
+    "modified": 1734513083
+>>>>>>> dev
 }

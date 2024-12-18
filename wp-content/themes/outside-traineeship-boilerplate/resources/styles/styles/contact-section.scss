@@ -4,8 +4,32 @@
 .contact-section {
     $self: ".contact-section";
 
+    @include media-breakpoint-up(sm) {
+
+        .container {
+            gap: 5rem;
+
+            #{$self} {
+                &__title {
+                    width: 45%;
+
+                    .subtitle {
+                        max-width: 55ch;
+                    }
+                }
+
+                &__form {
+                    width: 50%;
+                }
+            }
+        }
+
+    }
+
     .container {
         max-width: 100%;
+
+
 
         #{$self} {
             &__title .h2 {
@@ -41,23 +65,6 @@
                 }
             }
 
-            @include media-breakpoint-up(sm) {
-                gap: 5rem;
-
-                #{$self} {
-                    .contact__title {
-                        width: 45%;
-                        
-                        .subtitle {
-                            max-width: 55ch;
-                        }
-                    }
-    
-                    .contact__form {
-                        width: 50%;
-                    }
-                }
-            }
         }
     }
 }

@@ -1,0 +1,138 @@
+@import '../custom.scss';
+
+.recent__projects {
+    padding: 3rem 1.75rem;
+    margin-bottom: 7rem;
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 10rem;
+    }
+    .h2 {
+        margin-bottom: 5rem;
+    }
+
+    .project-filter{
+        border-block: 0.0625rem solid $neutral-100;
+        padding-block: 1.0625rem;
+        margin-bottom: 30px;
+        width: 100%;
+        .filter-btn{
+            border: none;
+            background: none;
+        }
+
+        #filter__categories{
+            border: none;
+            outline: none; 
+            appearance: none;
+        }
+    }
+    .project-lists {
+        width: 100%;
+
+        .project-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            .projects__container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid $neutral-100;
+
+                .image-container {
+                    width: 100%;
+                    margin-top: auto;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 16 / 10;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .pagination {
+                bottom: -5.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+                gap: 0.25rem;
+                overflow-x: auto;
+
+                @include media-breakpoint-up(sm) {
+                    bottom: -7.75rem;
+                }
+
+                .pagination-link {
+                    width: 3rem;
+                    height: 3rem;
+                    background: transparent;
+                    border-radius: 0.25rem;  
+                    border: 0.0625rem solid $neutral-100;
+                }
+
+                .prev-page, 
+                .next-page {
+                    background: transparent;
+                    border: none;
+                    font-size: 1.125rem;
+                    width: 3rem;
+                    height: 3rem;
+                    display: grid;
+                    place-items: center;
+                    span{
+                        color: $neutral-600;
+                    }
+                }
+
+                .prev-page {
+                    transform: rotate(90deg);
+                }
+                .next-page {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        
+    }
+    @include media-breakpoint-up(sm){
+        padding: 5rem;
+        .project-filter{
+            .filter-buttons{
+                gap: 2rem;
+            }
+        }
+        .project-lists{
+            .project-wrapper{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                .projects__container{
+                    gap: 1.5rem;
+                    .projects__heading{
+                        // margin-top: 24px;
+                        order: 1;
+                    }
+                    .projects__category{
+                        margin-top: auto;
+                    }
+                    .image-container{
+                        margin-top: 0;
+                        order: -2;
+                    }
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(md){
+        .project-lists{
+            .project-wrapper{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+

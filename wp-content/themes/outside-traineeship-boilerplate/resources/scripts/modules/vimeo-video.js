@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const controls = document.querySelector('.gallery__controls');
     const videoOverlay = document.querySelector('.overlay');
 
-    let isPlaying = false; 
+    let isPlaying = false;
 
     playpauseButton.addEventListener('click', () => {
         if (isPlaying) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             player.play();
             playpauseButton.classList.replace("icon-play", "icon-pause");
         }
-        isPlaying = !isPlaying; 
+        isPlaying = !isPlaying;
     });
 
     videoContainer.addEventListener('mouseenter', () => {
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     videoContainer.addEventListener('mouseleave', () => {
-        if(isPlaying){
+        if (isPlaying) {
             controls.style.opacity = '0';
             videoOverlay.style.opacity = '0';
-        } 
+        }
     });
 });

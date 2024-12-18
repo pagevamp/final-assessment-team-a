@@ -24,20 +24,21 @@
 
         .leader {
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid $neutral-100;
+            border-bottom: 0.0625rem solid $neutral-100;
 
             &__image-container {
                 margin-bottom: 2rem;
                 
                 img {
                     aspect-ratio: 11 / 10;
+                    object-fit: cover;
                 }
             }
 
             &__details {
 
                 .sh1 {
-                    margin-bottom: 4px;
+                    margin-bottom: 0.25rem;
                 }
             }
         }

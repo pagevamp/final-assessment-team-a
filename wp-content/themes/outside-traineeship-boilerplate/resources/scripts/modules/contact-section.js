@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
             moveInDateError.textContent = "Move-in date is required.";
             document.getElementById("move-in-date").style.borderColor = "#D72027";
             isValid = false;
+        } else if (!validateDateFormat(moveInDate)) {
+            moveInDateError.textContent = "Please enter a valid date in the format YYYY-MM-DD.";
+            document.getElementById("move-in-date").style.borderColor = "#D72027";
+            isValid = false;
         }
 
         if (unitType === "") {
@@ -112,6 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
         function validateEmail(email) {
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailPattern.test(email);
+        }
+        function validateDateFormat(date) {
+            const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+            return datePattern.test(date);
         }
     });
 });

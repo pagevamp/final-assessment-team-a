@@ -22,7 +22,7 @@
                 width: 100%;
 
                 padding-bottom: 2rem;
-                border-bottom: 1px solid $neutral-100;
+                border-bottom: 0.0625rem solid $neutral-100;
 
                 &:last-child {
                     padding-bottom: 0;
@@ -75,7 +75,7 @@
                     padding-bottom: 0;
                     border-bottom: none;
 
-                    border-right: 1px solid $neutral-100;
+                    border-right: 0.0625rem solid $neutral-100;
 
                     &:last-child {
                         border-right: none;

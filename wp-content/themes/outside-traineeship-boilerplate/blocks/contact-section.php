@@ -54,7 +54,7 @@ if (!empty($contact_section)):
 
                     <!-- Move in date field -->
                     <label for="move-in-date" class="form-label position-relative">
-                        <input type="text" id="move-in-date" class="form-control text-md text-neutral-600" name="date-input" placeholder="Move-in Date" pattern="\d{4}-\d{2}-\d{2}" title="Enter a date in the format YYYY-MM-DD" required>
+                        <input type="text" id="move-in-date" class="form-control text-md text-neutral-600" name="move_in_date" placeholder="Move-in Date" pattern="\d{4}-\d{2}-\d{2}" title="Enter a date in the format YYYY-MM-DD" required>
                         <span id="move-in-date-error" class="error-message text-sm text-primary"></span>
                     </label>
 

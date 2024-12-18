@@ -10,7 +10,7 @@
     $self: ".partners";
 
     .grid-block {
-        border-inline: 1px solid $neutral-100;
+        border-inline: 0.0625rem solid $neutral-100;
         height: $grid-end-width;
     }
 
@@ -20,16 +20,14 @@
 
     &__container {
         display: grid;
-
         $columns: 2;
         grid-template-columns: repeat($columns, 1fr);
 
         #{$self} {
-
             &__image-container {
                 display: grid;
                 place-items: center;
-                border: 1px solid $neutral-100;
+                border: 0.0625rem solid $neutral-100;
                 cursor: pointer;
 
                 img {
@@ -66,11 +64,9 @@
             grid-template-columns: repeat($columns, 1fr);
 
             #{$self} {
-
                 &__image-container {
                     box-sizing: border-box;
                     $columns: 3;
-                    @include edge-row-selector($columns);
                 }
             }
         }
@@ -90,10 +86,8 @@
             grid-template-columns: repeat($columns, 1fr);
 
             #{$self} {
-
                 &__image-container {
                     $columns: 4;
-                    @include edge-row-selector($columns);
                 }
             }
         }
