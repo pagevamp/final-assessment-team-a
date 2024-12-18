@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(data => {
                     if (data.success) {
                         form.reset();
-                        alert('Success');
+                        alert('Your contact information is susccessfully recorded.');
                     } else {
                         alert('Error: ' + data.data);
                     }
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("first-name").style.borderColor = "#111111";
             document.getElementById("last-name").style.borderColor = "#111111";
             document.getElementById("email").style.borderColor = "#111111";
-            document.getElementById("number").style.borderColor = "#111111";
+            document.getElementById("phone").style.borderColor = "#111111";
             document.getElementById("move-in-date").style.borderColor = "#111111";
             document.getElementById("unit-type").style.borderColor = "#111111";
         }
