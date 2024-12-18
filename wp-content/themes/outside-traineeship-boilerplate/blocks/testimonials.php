@@ -41,7 +41,7 @@
                                             <div class="testimonials__info">
 
                                                 <?php if($name):?>
-                                                    <p class="c2 text-neutral-500 text-md-neutral-100 testimonials__name" tabindex="0"><?php echo $name; ?></p>
+                                                    <p class="c2 text-neutral-500 testimonials__name" tabindex="0"><?php echo $name; ?></p>
                                                 <?php endif; ?>
                                                 
                                                 <?php if($company ):?>

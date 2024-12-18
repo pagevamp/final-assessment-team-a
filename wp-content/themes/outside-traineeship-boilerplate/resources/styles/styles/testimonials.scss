@@ -89,6 +89,9 @@
                 padding-inline: 0 4rem;
                 object-fit: contain;
             }
+            #{$this}__name{
+                color: $neutral-100;
+            }
 
             
         }
@@ -109,9 +112,8 @@
             left: 86%;
             width: 10%;
             height: 2px; /* Adjust the height of the progress bar if needed */
-            background-color: $neutral-200;
-
             &-progressbar{
+                
                 &-fill{
                     background-color: $primary-red;
                 }
