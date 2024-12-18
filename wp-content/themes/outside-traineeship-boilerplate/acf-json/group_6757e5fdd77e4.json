@@ -32,7 +32,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "Do you want the image to be oriented at the left?",
+                    "message": "Do you want the image to be oriented at the right?",
                     "default_value": 0,
                     "allow_in_bindings": 1,
                     "ui": 0,
@@ -253,5 +253,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734086021
+    "modified": 1734500557
 }
