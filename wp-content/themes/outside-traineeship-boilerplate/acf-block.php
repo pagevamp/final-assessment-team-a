@@ -12,9 +12,14 @@ add_action('acf/init', function() {
             'leadership' => 'Leadership',
             'vimeo_video' => 'Vimeo Video',
             'history'   => 'History',
+<<<<<<< HEAD
             'working_hours' => 'Working Hours',
             'capabilities' => 'Capabilities',
             'contact_section' => 'Contact Section',
+=======
+            'recent_projects'   => "Recent Projects",
+            'projects'  => "Projects"
+>>>>>>> PR2-WTFA-56
         ];
 
         foreach($biolerplateModules as $key => $mModule) {
@@ -52,7 +57,7 @@ add_action('acf/init', function() {
                             wp_enqueue_style($fileName.'.css', $cssFilePathDir);
                         }
 
-                        if ( file_exists( $jsFilePath ) && ($fileName != 'contact-section')  ) {
+                        if ( file_exists( $jsFilePath ) && ($fileName != 'contact-section') && ($fileName != 'projects')) {
                             wp_enqueue_script( $fileName.'js', $jsFilePathDir, array('jquery'), '', true );
                         }
                     }
