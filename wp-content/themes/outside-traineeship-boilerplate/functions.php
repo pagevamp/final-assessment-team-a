@@ -146,8 +146,6 @@ add_action('widgets_init', 'outside_traineeship_biolerplate_widgets_init');
 function outside_traineeship_biolerplate_scripts() {
 	wp_enqueue_style('app.css', get_template_directory_uri().'/public/styles/app.css', false, null);
     wp_enqueue_script('app.js', get_template_directory_uri().'/public/scripts/app.js', ['jquery'], null, true);
-	
-    wp_enqueue_script('history.js', get_template_directory_uri().'/public/scripts/history.js', ['jquery'], null, true);
 
     wp_enqueue_script('contact-section.js', get_template_directory_uri().'/public/scripts/contact-section.js', ['jquery'], null, true);
 
