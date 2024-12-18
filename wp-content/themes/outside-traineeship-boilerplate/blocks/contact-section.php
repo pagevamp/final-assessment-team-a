@@ -75,11 +75,11 @@ if (!empty($contact_section)):
                     </label>
 
                     <label for="1bedroom" class="form-check-label d-block text-md text-neutral-600">
-                        <input type="radio" id="bedroom-1" name="room-type" class="form-check-input" value="bedroom-1"> 1 Bedroom
+                        <input type="radio" id="bedroom-1" name="room_type" class="form-check-input" value="bedroom-1"> 1 Bedroom
                     </label>
 
                     <label for="2bedroom" class="form-check-label d-block text-md text-neutral-600">
-                        <input type="radio" id="bedroom-2" name="room-type" class="form-check-input" value="bedroom-2"> 2 Bedroom
+                        <input type="radio" id="bedroom-2" name="room_type" class="form-check-input" value="bedroom-2"> 2 Bedroom
                         <span id="room-type-error" class="error-message text-sm text-primary d-block"></span>
                     </label>
 
