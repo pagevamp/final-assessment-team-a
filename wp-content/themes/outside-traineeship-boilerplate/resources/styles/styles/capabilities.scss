@@ -34,7 +34,7 @@
 
                 @include media-breakpoint-up(sm) {
                     padding-bottom: 4rem;
-                    border-bottom: 1px solid $neutral-75;
+                    border-bottom: 0.0625rem solid $neutral-75;
 
                     &:last-child {
                         padding-bottom: 0;
@@ -60,7 +60,7 @@
 
                     li {
                         padding-block: 1rem;
-                        border-bottom: 1px solid $neutral-100;
+                        border-bottom: 0.0625rem solid $neutral-100;
 
                         @include media-breakpoint-up(sm) {
                             padding-block: 0;
