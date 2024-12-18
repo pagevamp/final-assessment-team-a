@@ -1,34 +1,39 @@
 @import '../custom.scss';
 
-.stories{
+.stories {
     margin-block: 7.5rem;
     margin-inline: 1.75rem;
-    
-    &__content{
-        .c1{
-            margin-bottom: 1.75rem;
-        }
-        .h5{
-            margin-bottom: 3rem;
-        }
-        a{
+
+    &__content {
+        a {
             width: 11.25rem;
             text-wrap: nowrap;
         }
+
+        .c1 {
+            margin-bottom: 1.75rem;
+        }
+
+        .h5 {
+            margin-bottom: 3rem;
+            font-family: 'Reckless Neue Book';
+        }
     }
 
-    @include media-breakpoint-up(sm){
+    @include media-breakpoint-up(sm) {
         margin: 8rem;
-        .stories__content{
+
+        .stories__content {
             border-left: 1px solid $neutral-100;
             padding-left: 5.5rem;
 
-            a{
+            a {
                 width: 15rem;
             }
         }
     }
-    @include media-breakpoint-up(md){
+
+    @include media-breakpoint-up(md) {
         margin-block: 11.25rem;
         padding-left: 21%;
     }
