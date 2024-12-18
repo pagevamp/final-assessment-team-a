@@ -26,7 +26,7 @@
                         <?php if (!empty($detail['descriptions'])): ?>
                             <div class="description-container">
                                 <?php foreach ($detail['descriptions'] as $description): ?>
-                                    <p class="sh3 text-neutral-600">
+                                    <p class="sh3 text-neutral-600 working-hours__desc">
                                         <?php echo esc_html($description['description']); ?>
                                     </p>
                                 <?php endforeach; ?>
