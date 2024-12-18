@@ -20,7 +20,7 @@
                     </div>
                 <?php endforeach; ?>
                 <div class="partners__image-container">
-                    <a href="#" class="text-decoration-none btn-tertiary" aria-label="View All Partners">View All Partners
+                    <a href="#" class="text-decoration-none" aria-label="View All Partners">View All Partners
                     </a>
                 </div>
             </div>

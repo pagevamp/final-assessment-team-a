@@ -14,7 +14,7 @@ if (!empty($contacts)):
     $email            = $social_links['email'];
 ?>
 
-    <section id="contacts-<?php echo $timestamp; ?>" class="contacts bg-texture container-fluid">
+    <section id="contacts-<?php echo $timestamp; ?>" class="contacts bg-texture">
         <div class="contacts__container d-sm-flex g-s w-100">
             <?php if (!empty($image)): ?>
                 <figure class="contacts__image-container w-100 mb-l mb-sm-0">
