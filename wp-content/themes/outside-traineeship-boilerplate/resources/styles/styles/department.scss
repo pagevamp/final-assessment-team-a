@@ -62,6 +62,16 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
+        #{$this} {
+            &:nth-of-type(2){
+                #{$this}__content-head{
+                    p{
+                        order: 0;
+                    }
+                }
+            }
+        }
+
         &__details{
             #{$this}{
                 &__content-head{
