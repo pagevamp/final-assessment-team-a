@@ -38,12 +38,12 @@
 		$is_assigned	= has_nav_menu('header-menu'); // check if menu location is assigned
 		?>
 
-		<header id="header" class="header container" role="banner">
+		<header id="header" class="header" role="banner">
 			<nav class="navbar navbar-expand-lg navbar-light" role="navigation">
 				<div class="container-fluid">
 					<!-- Logo Section -->
 					<?php if (!empty($logo)): ?>
-						<figure class="header__logo-container navbar-brand">
+						<figure class="header__logo-container navbar-brand mb-0 pt-s">
 							<a href="#" aria-label="Homepage">
 								<img class="header__logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 							</a>
@@ -85,7 +85,7 @@
 						?>
 
 						<!-- Emergency Contact Information in Offcanvas -->
-						<div class="offcanvas-header">
+						<div class="offcanvas-header mt-auto">
 							<a href="<?php echo $linkedin['url']; ?>" target="<?php echo $linkedin['target']; ?>" title="LinkedIn">
 								<span class="icon-linkedin text-decoration-none text-neutral-600" aria-hidden="true"></span>
 							</a>
@@ -100,7 +100,7 @@
 
 					<!-- Main Header Contact Info -->
 					<?php if (!empty($emergency['heading']) || !empty($emergency['phone'])): ?>
-						<div class="header__contact" aria-label="Emergency contact">
+						<div class="header__contact d-none d-lg-block" aria-label="Emergency contact">
 							<div class="header__emergency">
 								<p class="text-xsm text-neutral-600 text-center"><?php echo $emergency['heading']; ?></p>
 
