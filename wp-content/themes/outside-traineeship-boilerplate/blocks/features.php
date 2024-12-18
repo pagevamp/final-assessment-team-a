@@ -37,7 +37,7 @@
 
                         <?php if (!empty($paragraphs)): ?>
                             <?php foreach ($paragraphs as $paragraph): ?>
-                                <p class="body__content"><?php echo $paragraph['paragraph']; ?></p>
+                                <p class="body__content text-md"><?php echo $paragraph['paragraph']; ?></p>
                             <?php endforeach; ?>
                         <?php endif; ?>
 

@@ -98,11 +98,18 @@
     }
     @include media-breakpoint-up(sm){
         padding: 5rem;
+        .text-section-title {
+            &::after {
+                background-color: $neutral-200;
+            }
+        }
+
         .project-filter{
             .filter-buttons{
                 gap: 2rem;
             }
         }
+        
         .project-lists{
             .project-wrapper{
                 display: grid;

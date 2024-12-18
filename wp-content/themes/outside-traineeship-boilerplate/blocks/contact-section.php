@@ -60,7 +60,7 @@ if (!empty($contact_section)):
 
                     <!-- Unit type field -->
                     <label for="unit-type" class="form-label">
-                        <select name="unit-type" id="unit-type" placeholder="Unit Type" class="form-select text-md text-neutral-600" required>
+                        <select name="unit_type" id="unit-type" placeholder="Unit Type" class="form-select text-md text-neutral-600" required>
                             <option class="text-md text-neutral-200" value="">Unit Type *</option>
                             <option value="lorem">Lorem</option>
                             <option value="ipsum">Ipsum</option>
@@ -71,7 +71,7 @@ if (!empty($contact_section)):
 
                     <!-- Room type field -->
                     <label for="studio" class="form-check-label d-block text-md text-neutral-600">
-                        <input type="radio" id="studio" name="room-type" class="form-check-input" value="studio" required> Studio
+                        <input type="radio" id="studio" name="room_type" class="form-check-input" value="studio" required> Studio
                     </label>
 
                     <label for="1bedroom" class="form-check-label d-block text-md text-neutral-600">
