@@ -89,32 +89,6 @@
                     "ui": 0,
                     "ui_on_text": "",
                     "ui_off_text": ""
-                },
-                {
-                    "key": "field_675fbced95bdb",
-                    "label": "Pagination or Navigation",
-                    "name": "pagination_or_navigation",
-                    "aria-label": "",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "navigation": "Navigation",
-                        "pagination": "Pagination"
-                    },
-                    "default_value": "",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "allow_in_bindings": 0,
-                    "layout": "vertical",
-                    "save_other_choice": 0
                 }
             ]
         }
@@ -137,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734327651
+    "modified": 1734540917
 }

@@ -4,7 +4,6 @@ if (!empty($projects)):
     $title                  = $projects['heading'];
     $relationship_posts     = $projects['projects_relationship'];
     $filter                 = $projects['filter'];
-    $page_or_nav            = $projects['pagination_or_navigation'];
     $post_ids               = array();
 
     foreach ($relationship_posts as $relationship_post) {
