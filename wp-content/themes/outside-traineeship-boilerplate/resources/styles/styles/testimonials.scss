@@ -68,7 +68,7 @@
             .btn-primary{
                 &-next, &-prev{
                     border: none;
-                    width: 48px;
+                    width: 3rem;
                     aspect-ratio: 1;
                 }
             }
@@ -100,7 +100,7 @@
         //     max-width: 1100px;
         // }
         #{$this}__logo{
-            margin-right: 30px;
+            margin-right: 1.875rem;
         }
         .swiper-pagination {
             display: block !important;
@@ -109,7 +109,7 @@
             left: 86%;
             width: 10%;
             height: 2px; /* Adjust the height of the progress bar if needed */
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: $neutral-200;
 
             &-progressbar{
                 &-fill{

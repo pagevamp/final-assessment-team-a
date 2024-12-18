@@ -46,5 +46,5 @@ if (!empty($working_hours)):
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
