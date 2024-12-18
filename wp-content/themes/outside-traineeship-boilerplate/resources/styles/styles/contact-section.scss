@@ -1,58 +1,63 @@
 @import '../custom.scss';
 @import '../../.././node_modules/bootstrap/scss/forms';
 
-.contact__section {
+.contact-section {
+    $self: ".contact-section";
+
     .container {
         max-width: 100%;
 
-        .contact__title .h2 {
-            max-width: 19ch;
-        }
-
-        .contact__form {
-            .form-label {
-                width: 100%;
-                margin-bottom: 24px;
+        #{$self} {
+            &__title .h2 {
+                max-width: 19ch;
             }
 
-            .form-control,
-            .form-select {
-                padding-block: 14px;
-                color: $neutral-600;
-                border-color: $neutral-600;
-            }
+            &__form {
+                .form-label {
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
 
-            .btn-primary {
-                margin-top: 3rem;
-            }
-
-            .form-check-input {
-                &:checked {
-                    background-color: $neutral-600;
+                .form-control,
+                .form-select {
+                    padding-block: 14px;
+                    color: $neutral-600;
                     border-color: $neutral-600;
                 }
 
-                &:focus {
-                    box-shadow: none;
+                .btn-primary {
+                    margin-top: 3rem;
+                }
+
+                .form-check-input {
+                    &:checked {
+                        background-color: $neutral-600;
+                        border-color: $neutral-600;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            @include media-breakpoint-up(sm) {
+                gap: 5rem;
+
+                #{$self} {
+                    .contact__title {
+                        width: 45%;
+                        
+                        .subtitle {
+                            max-width: 55ch;
+                        }
+                    }
+    
+                    .contact__form {
+                        width: 50%;
+                    }
                 }
             }
         }
-
-        @include media-breakpoint-up(sm) {
-            gap: 5rem;
-
-            .contact__title {
-                width: 45%;
-
-                .subtitle {
-                    max-width: 55ch;
-                }
-            }
-
-            .contact__form {
-                width: 50%;
-            }
-        }
-
     }
 }
